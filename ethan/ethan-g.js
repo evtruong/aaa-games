@@ -2,7 +2,7 @@ let x;
 let y;
 
 var player = {
-    health = 100,
+    mhealth = 100,
     dmge = function(y){
 
         y = Math.floor(Math.random() * 20) + 1;
@@ -26,7 +26,7 @@ var player = {
 }
 
 var monster = {
-    health = 200,
+    mhealth = 200,
     dmge = function(x){
 
         x = Math.floor(Math.random() * 20) + 1;
@@ -54,4 +54,4 @@ var pRoll = document.getElementById("pDie").onclick;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster.health;
+monHp.textContent=monster.mhealth;
