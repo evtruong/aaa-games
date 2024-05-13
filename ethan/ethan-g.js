@@ -8,7 +8,7 @@ var player = {
         y = Math.floor(Math.random() * 20) + 1;
 
         if (y <= 5){
-            alert("Dodged")
+            alert("Dodged");
         }
         else if (y > 5 && y <=10){
             this.phealth - 5;
