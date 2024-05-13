@@ -39,15 +39,15 @@ var monster = {
             alert("Dodged");
         }
         else if (x > 5 && x <=10){
-          alert("Critical hit! 50 dmge");
+          alert("Weak hit! 10 dmge");
             return this.mhealth - this.whit;
         }
         else if (x > 10 && x <=15){
-          alert("Critical hit! 50 dmge");
+          alert("Medium hit! 15 dmge");
             return this.mhealth - this.mhit;
         }
         else if (x > 15 && x <= 19){
-          alert("Critical hit! 50 dmge");
+          alert("Heavy hit! 25 dmge");
             return this.mhealth - this.hhit;
         }
         else {
@@ -63,4 +63,4 @@ dDie.onclick=monster.monDef;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster.mhealth;
+monHp.textContent=monster.monDef;
