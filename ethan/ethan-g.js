@@ -2,8 +2,8 @@ let x;
 let y;
 
 var player = {
-    phealth = 100,
-    defAtt = function(y){
+    phealth : 100,
+    defAtt : function(y){
 
         y = Math.floor(Math.random() * 20) + 1;
 
@@ -11,40 +11,40 @@ var player = {
             alert("Dodged")
         }
         else if (y > 5 && y <=10){
-            this.health - 5;
+            this.phealth - 5;
         }
         else if (y > 10 && y <=15){
-            this.health - 10;
+            this.phealth - 10;
         }
         else if (y > 15 && y <= 19){
-            this.health - 15;
+            this.phealth - 15;
         }
         else {
-            this.health - 25;
+            this.phealth - 25;
         }
     }
 }
 
 var monster = {
-    mhealth = 200,
-    monDef = function(x){
+    mhealth : 200,
+    monDef : function(x){
 
         x = Math.floor(Math.random() * 20) + 1;
 
         if (x <= 5){
-            alert("Dodged")
+            alert("Dodged");
         }
         else if (x > 5 && x <=10){
-            this.health - 10;
+            this.mhealth - 10;
         }
         else if (x > 10 && x <=15){
-            this.health - 15;
+            this.mhealth - 15;
         }
         else if (x > 15 && x <= 19){
-            this.health - 25;
+            this.mhealth - 25;
         }
         else {
-            this.health - 50;
+            this.mhealth - 50;
         }
     }
 
