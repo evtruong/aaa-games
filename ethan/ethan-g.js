@@ -27,6 +27,10 @@ var player = {
 
 var monster = {
     mhealth : 200,
+    whit: 10,
+    mhit: 15,
+    hhit: 25,
+    crit: 50,
     monDef : function(x){
 
         x = Math.floor(Math.random() * 20) + 1;
@@ -35,20 +39,20 @@ var monster = {
             alert("Dodged");
         }
         else if (x > 5 && x <=10){
-            this.mhealth - 10;
-            alert("Dealt 10 dmge");
+          alert("Critical hit! 50 dmge");
+            return this.mhealth - this.whit;
         }
         else if (x > 10 && x <=15){
-            this.mhealth - 15;
-            alert("Dealt 15 dmge");
+          alert("Critical hit! 50 dmge");
+            return this.mhealth - this.mhit;
         }
         else if (x > 15 && x <= 19){
-            this.mhealth - 25;
-            alert("Dealt 25 dmge");
+          alert("Critical hit! 50 dmge");
+            return this.mhealth - this.hhit;
         }
         else {
-            this.mhealth - 50;
-            alert("Critical hit! 50 dmge");
+          alert("Critical hit! 50 dmge");
+            return this.mhealth - this.crit;
         }
     }
 
