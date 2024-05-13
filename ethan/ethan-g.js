@@ -50,7 +50,8 @@ var monster = {
 
 }
 
-var pRoll = document.getElementById("pDie").onclick;
+var dRoll = document.getElementById("dDie").onclick;
+dDie.onclick=monster.monDef
 
 
 var monsterHealth = document.getElementById("monHp");
