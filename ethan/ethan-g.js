@@ -29,7 +29,7 @@ var monster = {
     mhealth : 200,
     monDef : function(x){
 
-        x = Math.floor(Math.random() * 20) + 1;
+        x = Math.floor(Math.random() * 20);
 
         if (x <= 5){
             alert("Dodged");
