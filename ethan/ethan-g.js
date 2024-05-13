@@ -36,15 +36,19 @@ var monster = {
         }
         else if (x > 5 && x <=10){
             this.mhealth - 10;
+            alert("Dealt 10 dmge");
         }
         else if (x > 10 && x <=15){
             this.mhealth - 15;
+            alert("Dealt 15 dmge");
         }
         else if (x > 15 && x <= 19){
             this.mhealth - 25;
+            alert("Dealt 25 dmge");
         }
         else {
             this.mhealth - 50;
+            alert("Critical hit! 50 dmge");
         }
     }
 
