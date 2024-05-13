@@ -2,7 +2,7 @@ let x;
 let y;
 
 var player = {
-    mhealth = 100,
+    phealth = 100,
     dmge = function(y){
 
         y = Math.floor(Math.random() * 20) + 1;
