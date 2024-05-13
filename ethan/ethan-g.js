@@ -3,7 +3,7 @@ let y;
 
 var player = {
     phealth = 100,
-    dmge = function(y){
+    defAtt = function(y){
 
         y = Math.floor(Math.random() * 20) + 1;
 
@@ -27,7 +27,7 @@ var player = {
 
 var monster = {
     mhealth = 200,
-    dmge = function(x){
+    monDef = function(x){
 
         x = Math.floor(Math.random() * 20) + 1;
 
