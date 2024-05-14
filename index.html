@@ -1,56 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!--BOOTSTRAP CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container-fluid">
-        
-        <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-                <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">AAA Games</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Our Games
-                        </a>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Will's Rice Production Line</a></li>
-                        <li><a class="dropdown-item" href="#">Daniel Game Name</a></li>
-                        <li><a class="dropdown-item" href="#">Alexis' Game Name</a></li>
-                        <li><a class="dropdown-item" href="et-page.html">Ethan's Game Name</a></li>
-                        <li><a class="dropdown-item" href="#">Angel's Game Name</a></li>
-                        </ul>
-                    </li>
-                    </ul>
-                </div>
-                </div>
-            </nav>
-  
-        </div>
-
-        <h1>Hello World!</h1>
-        <img src="media/placeholder.png" alt="real">
-
-    </div>
-    <!--BOOTSTRAP SCRIPTS-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Factory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container-fluid tba">
+      <div class="row border border-primary">
+        <h1 class="border border-primary col-md-3 col-sm-3"><span id="demo"></span>'s rice production line</h1>
+        <h1 id="amount"class="col-md-8 col-sm-8">1</h1>
+      </div>
+      <div class="row border">
+        <button class="col-md-3" id="buy"> <h1>Blue</h1></button>
+        <p id="bought">0</p>
+        <p id="price">1</p>
+        <p id="product">1</p>
+      </div>
+      <div>
+        <button id="toggle" onclick="toggle()"> <p id="tog"></p></button>
+       
+      </div>
+      <button id="buy" onclick="base()">red</button>
+  </div>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
 </html>
