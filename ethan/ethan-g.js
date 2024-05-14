@@ -18,18 +18,22 @@ var player = {
             return newMHp;
         }
         else if (y > 5 && y <=10){
+            alert("Weak hit! 10 dmge");
             var newMHp = monster.mhealth - this.whit;
             return newMHp;
         }
         else if (y > 10 && y <=15){
+            alert("Medium hit! 15 dmge");
             var newMHp = monster.mhealth - this.mhit;
             return newMHp;
         }
         else if (y > 15 && y <= 19){
+            alert("Heavy hit! 20 dmge");
             var newMHp = monster.mhealth - this.hhit;
             return newMHp;
         }
         else {
+            alert("Critical hit! 30 dmge");
             var newMHp = monster.mhealth - this.crit;
             return newMHp;
         }
