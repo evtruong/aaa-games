@@ -40,19 +40,23 @@ var monster = {
         }
         else if (x > 5 && x <=10){
           alert("Weak hit! 10 dmge");
-            return this.mhealth - this.whit;
+            var newHp= this.mhealth - this.whit;
+            return newHp;
         }
         else if (x > 10 && x <=15){
           alert("Medium hit! 15 dmge");
-            return this.mhealth - this.mhit;
+            var newHp= this.mhealth - this.mhit;
+            return newHp;
         }
         else if (x > 15 && x <= 19){
           alert("Heavy hit! 25 dmge");
-            return this.mhealth - this.hhit;
+            var newHp= this.mhealth - this.hhit;
+            return newHp;
         }
         else {
           alert("Critical hit! 50 dmge");
-            return this.mhealth - this.crit;
+            var newHp= this.mhealth - this.crit;
+            return newHp;
         }
     }
 
@@ -63,4 +67,4 @@ dDie.onclick=monster.monDef;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster[monDef];
+monHp.textContent=monster.monDef[newHp];
