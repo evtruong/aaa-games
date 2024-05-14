@@ -27,6 +27,7 @@ var player = {
 
 var monster = {
     mhealth : 200,
+    miss: 0,
     whit: 10,
     mhit: 15,
     hhit: 25,
@@ -37,26 +38,28 @@ var monster = {
 
         if (x <= 5){
             alert("Dodged");
+            var newMHp= this.mhealth - this.miss;
+            return newMHp;
         }
         else if (x > 5 && x <=10){
           alert("Weak hit! 10 dmge");
-            var newHp= this.mhealth - this.whit;
-            return newHp;
+            var newMHp= this.mhealth - this.whit;
+            return newMHp;
         }
         else if (x > 10 && x <=15){
           alert("Medium hit! 15 dmge");
-            var newHp= this.mhealth - this.mhit;
-            return newHp;
+            var newMHp= this.mhealth - this.mhit;
+            return newMHp;
         }
         else if (x > 15 && x <= 19){
           alert("Heavy hit! 25 dmge");
-            var newHp= this.mhealth - this.hhit;
-            return newHp;
+            var newMHp= this.mhealth - this.hhit;
+            return newMHp;
         }
         else {
           alert("Critical hit! 50 dmge");
-            var newHp= this.mhealth - this.crit;
-            return newHp;
+            var newMHp= this.mhealth - this.crit;
+            return newMHp;
         }
     }
 
@@ -67,4 +70,4 @@ dDie.onclick=monster.monDef;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster.monDef;
+monHp.textContent=monster.newMHp;
