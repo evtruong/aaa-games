@@ -70,4 +70,4 @@ dDie.onclick=monster.monDef;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster.newMHp;
+monHp.textContent=monster.monDef[newMHp];
