@@ -85,4 +85,4 @@ dDie.onclick=player.defAtt;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster.monDef[newMHp];
+monHp.textContent=player.defAtt[newMHp];
