@@ -7,3 +7,33 @@
 table, th, td {
   border: 1px solid;
 }
+.bowl{
+  height: 950px;
+  width: 500px;
+  padding-left: -20px;
+  position: relative;
+  left: -120px;
+}
+.may{
+  position: absolute;
+  top:1250px;
+  left: 100px;
+  font-size: 15px
+}
+.chabutton{
+  position: absolute;
+  top:1260px;
+  left: 450px;
+}
+.onebtn{
+  position: relative;
+  top:100px;
+  left: -30px;
+}
+.onebtnimg{
+  width:300px;
+}
+.onebtnbac{
+  background: transparent;
+  border:transparent;
+}
