@@ -495,18 +495,21 @@ function change(){
     }
 }
 function imgchange(){
-    if(rice/480000000000>=0){
-        document.getElementById("cup").src="media/empty.png"
+    if(rice/480000000000>=0 && rice/480000000000<0.25){
+        let empty=document.querySelector("#cup")
+        empty.setAttribute("src", "media/empty.png")
     }
-    else if(rice/480000000000>=0.25){
-        document.getElementById("cup").src="media/quarter.png"
+    else if(rice/480000000000>=0.25 && rice/480000000000<0.5){
+        let quarter=document.querySelector("#cup")
+        quarter.setAttribute("src", "media/quarter.png")
     }
-    else if(rice/480000000000>=0.5){
-        document.getElementById("cup").src="media/half.png"
+    else if(rice/480000000000>=0.5 && rice/480000000000<0.75){
+        let half=document.querySelector("#cup")
+        half.setAttribute("src", "media/half.png")
     }
     else if(rice/480000000000>=1){
-        alert("bob")
-        document.getElementById("cup").src="media/full.png"
+        let full=document.querySelector("#cup")
+        full.setAttribute("src", "media/full.png")
     }
 }    
 
