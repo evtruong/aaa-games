@@ -80,9 +80,12 @@ var monster = {
 
 }
 
+var playerHealth = document.getElementById("pHp");
+pHp.textContent=player.phealth;
+
 var dRoll = document.getElementById("dDie").onclick;
 dDie.onclick=player.defAtt;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=player.defAtt[newMHp];
+monHp.textContent=monster.mhealth;
