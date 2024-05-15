@@ -1,5 +1,7 @@
 let x;
 let y;
+let newHp;
+let newMHp;
 
 var player = {
     phealth : 100,
@@ -8,33 +10,34 @@ var player = {
     mhit: 15,
     hhit: 20,
     crit: 30,
-    defAtt : function(y){
+    defAtt : function(y, newMHp){
 
         y = Math.floor(Math.random() * 20) + 1;
+        newMHp = monster.health;
 
         if (y <= 5){
             alert("Dodged");
-            var newMHp = monster.mhealth - this.miss;
+            newMHp = monster.mhealth - this.miss;
             return newMHp;
         }
         else if (y > 5 && y <=10){
             alert("Weak hit! 10 dmge");
-            var newMHp = monster.mhealth - this.whit;
+            newMHp = monster.mhealth - this.whit;
             return newMHp;
         }
         else if (y > 10 && y <=15){
             alert("Medium hit! 15 dmge");
-            var newMHp = monster.mhealth - this.mhit;
+            newMHp = monster.mhealth - this.mhit;
             return newMHp;
         }
         else if (y > 15 && y <= 19){
             alert("Heavy hit! 20 dmge");
-            var newMHp = monster.mhealth - this.hhit;
+            newMHp = monster.mhealth - this.hhit;
             return newMHp;
         }
         else {
             alert("Critical hit! 30 dmge");
-            var newMHp = monster.mhealth - this.crit;
+            newMHp = monster.mhealth - this.crit;
             return newMHp;
         }
     }
@@ -47,10 +50,11 @@ var monster = {
     mhit: 10,
     hhit: 15,
     crit: 25,
-    monDef : function(x){
+    monDef : function(x, newHp){
 
         x = Math.floor(Math.random() * 20) + 1;
-
+        newHp = player.phealth;
+      
         if (x <= 5){
             alert("Dodged");
             var newHp= player.phealth - this.miss;
@@ -81,11 +85,11 @@ var monster = {
 }
 
 var playerHealth = document.getElementById("pHp");
-pHp.textContent=player.phealth;
+pHp.textContent=player.defAtt[newMHp];
 
 var dRoll = document.getElementById("dDie").onclick;
 dDie.onclick=player.defAtt;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster.mhealth;
+monHp.textContent=monster.monDef[newHp];
