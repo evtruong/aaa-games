@@ -77,7 +77,7 @@ var monster = {
         }
         else {
           alert("Critical hit! 50 dmge");
-            var newHp= this.mhealth - this.crit;
+            var newHp= player.phealth - this.crit;
             return newHp;
         }
     }
