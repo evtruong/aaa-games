@@ -10,7 +10,7 @@ var player = {
     mhit: 15,
     hhit: 20,
     crit: 30,
-    defAtt : function(y, newMHp){
+    defAtt : function(newMHp){
 
         y = Math.floor(Math.random() * 20) + 1;
         newMHp = monster.health;
@@ -50,7 +50,7 @@ var monster = {
     mhit: 10,
     hhit: 15,
     crit: 25,
-    monDef : function(x, newHp){
+    monDef : function(newHp){
 
         x = Math.floor(Math.random() * 20) + 1;
         newHp = player.phealth;
@@ -85,11 +85,11 @@ var monster = {
 }
 
 var playerHealth = document.getElementById("pHp");
-pHp.textContent=player.defAtt(newMHp);
+pHp.textContent=player.defAtt(newHp);
 
 var dRoll = document.getElementById("dDie").onclick;
 dDie.onclick=player.defAtt;
 
 
 var monsterHealth = document.getElementById("monHp");
-monHp.textContent=monster.monDef(newHp);
+monHp.textContent=monster.monDef(newMHp);
