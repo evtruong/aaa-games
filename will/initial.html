@@ -8,10 +8,51 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div>
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+              <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">AAA Games</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav nav-underline">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Our Games
+                      </a>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="will/game1.html">Will's Rice Production Line</a></li>
+                      <li><a class="dropdown-item" href="#">Daniel Game Name</a></li>
+                      <li><a class="dropdown-item" href="#">Alexis' Game Name</a></li>
+                      <li><a class="dropdown-item" href="et-page.html">Ethan's Game Name</a></li>
+                      <li><a class="dropdown-item" href="#">Angel's Game Name</a></li>
+                      </ul>
+                  </li>
+                  </ul>
+              </div>
+              </div>
+          </nav>
+
+      </div>
+      </div>
+      
+      <div class="row">
+      <div class="col-md-12"></div>
         <p>Your progess won't be saved</p>
         <a href="index.html"><button type="button">Continue</button></a>
         <button type="button" onclick="history.back()">Go back</button>
+      </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
