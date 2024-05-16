@@ -1,0 +1,56 @@
+#top,.battlewin,#resultofwinner {
+    text-align:center;
+}
+#battlefield {
+    border:3px solid gold;
+}
+#side1{
+    text-align: left;
+}
+#side2{
+    text-align: right;
+}
+#side1, #side2 {
+    border:3px solid gold;
+}
+#top {
+    border:3px solid gold;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+#chamber {
+    border:3px solid gold;
+    height:350px;
+}
+#ro2,#ro3 {
+    padding-top:20px;
+}
+#roll,#restart {
+    display:block;
+    margin:auto;
+    margin-top:10px;
+}
+
+#userimg, #enemyimg {
+    height:60%;
+    width:60%;
+}
+
+#user{
+    float:left;
+}
+#enemy{
+    float:right;
+}
+#user, #enemy{
+    display:inline;
+    padding:100px 0;
+    font-size:80px;
+}
+.statmanage {
+    display:inline;
+    word-wrap: break-word;
+}
+.enemylay {
+    float:right;
+}
