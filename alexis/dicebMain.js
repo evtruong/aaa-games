@@ -1,10 +1,4 @@
 //EARLY DEVELOPMENT BELOW//
-//Used to set the level of the Enemy
-var enemylevel = [1,2,3];
-function enemiesCreate(){
-  let enemyskill = Math.floor(Math.random() * 10);
-  randomizeEncounter(enemyskill);
-}
 //Enemy statistics
 var enemystatistics = {
   unitsleftE:200,
@@ -80,7 +74,12 @@ var statistics = {
   },
 }
 //EARLY DEVELOPMENT ABOVE//
-//ADD HP TO BOTH SIDES// 
+  //Used to set the level of the Enemy
+  var enemylevel = [1,2,3];
+  function enemiesCreate(){
+    let enemyskill = Math.floor(Math.random() * 10);
+    randomizeEncounter(enemyskill);
+  }
 // Source - https://codepen.io/Pyremell/pen/eZGGXX //
 var dice = {
     sides: 6,
@@ -153,10 +152,10 @@ var dice = {
         alert("You've lost the war...");
       }
       else if(enemystatistics.unitsleftE<6){
-        alert("Congratulations, you've won the war!")
+        alert("Congratulations, you've won the war!");
       }
       else if(statistics.unitsleft<6 && enemystatistics.unitsleftE<6){
-        alert("This war was a draw!")
+        alert("This war was a draw!");
       }
       else{
         changeImg(dierolled,enemydierolled);
@@ -231,18 +230,22 @@ var dice = {
     }
    }
    //Prompt that the user is greeted with to know how many units they'd like to use
-   //Attempt to make it so the user can only input integer values
+   //Attempt to make it so the user can only input integer values//
    document.addEventListener("onload",customprompt());
-   function customprompt(){
+   function customprompt(completedOnce){
     let totalUnits = prompt("How many units would you like to have?");
     parseInt(totalUnits);
     statistics.unit(totalUnits);
-
-    let username1 = prompt("What will be your leader's name?");
-    let username2 = username1;
-    document.getElementById("usersnameone").innerHTML= username1;
-    document.getElementById("usersnametwo").innerHTML = username2;
-    enemiesCreate()
+    if (completedOnce === "true"){
+      enemiesCreate()
+    }
+    else{
+      let username1 = prompt("What will be your leader's name?");
+      let username2 = username1;
+      document.getElementById("usersnameone").innerHTML= username1;
+      document.getElementById("usersnametwo").innerHTML = username2;
+      enemiesCreate();
+    }
    }
   //Allows for the restarting of 
   var restart = document.getElementById("restart");
@@ -255,7 +258,8 @@ var dice = {
     document.getElementById("totalbattles").innerHTML = statistics.totalbattles = 0;
     document.getElementById("soldiersKstat").innerHTML = statistics.soldiersKilled = 0;
     document.getElementById("winlossratio").innerHTML = statistics.winlossratio = 0;
-    customprompt();
+    var completedOnce = "true";
+    customprompt(completedOnce);
   }
   //FIND A SIMPLER WAY TO DO THIS ABOVE//
   function randomizeEncounter(enemyskill){
@@ -263,11 +267,11 @@ var dice = {
       enemyskill = enemylevel[0];
       setEnemyStats(enemyskill);
     }
-    else if(enemyskill>=7 && enemyskill<10){
+    else if(enemyskill>=7 && enemyskill<=9){
       enemyskill = enemylevel[1];
       setEnemyStats(enemyskill);
     }
-    else if(enemyskill==10){
+    else if(enemyskill===10){
       enemyskill = enemylevel[2];
       setEnemyStats(enemyskill);
     }
@@ -276,22 +280,21 @@ var dice = {
   function setEnemyStats(enemyskill){
     if(enemyskill===1){
       enemystatistics.unitsleftE = 100;
+      document.getElementById("enemyhealthstat").innerHTML = enemystatistics.unitsleftE;
       var levelE = document.getElementById("enemylevel");
       levelE.innerHTML = "Rookie";
-      document.getElementById("enemyhealthstat").innerHTMl = enemystatistics.unitsleftE;
     }
     else if(enemyskill===2){
       enemystatistics.unitsleftE = 250;
+      document.getElementById("enemyhealthstat").innerHTML = enemystatistics.unitsleftE;
       var levelE = document.getElementById("enemylevel");
       levelE.innerHTML = "Amateur";
-      document.getElementById("enemyhealthstat").innerHTMl = enemystatistics.unitsleftE;
     }
     else if(enemyskill===3){
       enemystatistics.unitsleftE = 500;
+      document.getElementById("enemyhealthstat").innerHTML = enemystatistics.unitsleftE;
       var levelE = document.getElementById("enemylevel");
       levelE.innerHTML = "Pro";
-      document.getElementById("enemyhealthstat").innerHTMl = enemystatistics.unitsleftE;
     }
   }
-
-  //Work on randomizing enemies//
+  //WORK LATER//
