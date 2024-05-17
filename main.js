@@ -1,517 +1,653 @@
+"use strict";
 
-var name=prompt("What would your user name be?")
-document.getElementById("demo").innerHTML = name;
-//main section//
-var oc=false
-var to="on"
-var rice=0
-var totalrice=[]
-var allinall=0
-var weigh=0
-var kilo=0
-var buttonword="o"
-var total=0
-var b=0
-var increase=0
-var weightword="o"
-var plucking= {
-    number:1,
-    price:15,
-    //1/10 of a second interval it equals 0.01  1 second equals 0.1
-    production:0.01,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought1").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price1").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price1").textContent=this.price
-            }
-        }
-        document.getElementById("amount").innerHtml=rice
-   
-    },
-    made: function(){
-        if(this.number>=0, oc==false){
-            this.produced=(this.number*this.production)
-            if(this.produced!=NaN){
-                this.pro=(Math.round(100*(this.pro+this.produced)))/100
-                if(this.pro!==NaN){
-                    if(this.pro<0){
-                        this.pro=0
-                    }
-                    document.getElementById("product1").innerHTML=this.pro
-                }
-            }
-        }
-    }    
-}
-var planting= {
-    number:0,
-    price:100,
-    //0.1 per 1/10 second 1 persecond 
-    production: 0.1,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought2").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price2").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price2").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(10*(this.pro+this.produced))/10
-            document.getElementById("product2").innerHTML=this.pro
-        }
-    }    
-}
-var farming= {
-    number:0,
-    price:1100,
-    production: 1,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought3").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price3").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price3").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(this.pro+this.produced)
-            if(this.produced!=NaN){
-            document.getElementById("product3").innerHTML=this.pro
-            }
-        }
-    }    
-}
-var factory= {
-    number:0,
-    price:12000,
-    production: 10,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought4").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price4").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price4").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(this.pro+this.produced)
-            if(this.produced!=NaN){
-            document.getElementById("product4").innerHTML=this.pro
-            }
-        }
-    }    
-}
-var printing= {
-    number:0,
-    price:130000,
-    production: 100,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought5").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price5").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price5").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(this.pro+this.produced)
-            if(this.produced!=NaN){
-            document.getElementById("product5").innerHTML=this.pro
-            }
-        }
-    }      
-}
-var ritual= {
-    number:0,
-    price:1400000,
-    production: 1000,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought6").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price6").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price6").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(this.pro+this.produced)
-            if(this.produced!=NaN){
-            document.getElementById("product6").innerHTML=this.pro
-            }
-        }
-    }      
-}
-var spells= {
-    number:0,
-    price:15000000,
-    production: 10000,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought7").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price7").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price7").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(this.pro+this.produced)
-            if(this.produced!=NaN){
-            document.getElementById("product7").innerHTML=this.pro
-            }
-        }
-    }       
-}
-var chemistry= {
-    number:0,
-    price:160000000,
-    production: 100000,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought8").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price8").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price8").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(this.pro+this.produced)
-            if(this.produced!=NaN){
-            document.getElementById("product8").innerHTML=this.pro
-            }
-        }
-    }       
-}
-var nuclear_fusion= {
-    number:0,
-    price:1700000000,
-    production: 1000000,
-    produced:0,
-    pro:0,
-    bought: function(){
-        if(rice>=this.price && oc==false){
-            this.number++;
-            this.pro=this.pro-this.price
-            document.getElementById("bought9").textContent=this.number
-            if (this.price<10) {
-                this.price=Math.ceil(this.price*1.15)
-                document.getElementById("price9").textContent=this.price
-            }
-            else{
-                this.price=Math.round(this.price*1.15)
-                document.getElementById("price9").textContent=this.price
-            }
-            
-            if(rice<=0){
-                alert(rice)
-                rice=0
-                alert(rice)
-            }
-            document.getElementById("amount").innerHTML= rice;
-        }
-    },
-    
-    made: function(){
-        if(this.number>0, oc==false){
-            this.produced=(this.number*this.production)
-            this.pro=Math.round(this.pro+this.produced)
-            if(this.produced!=NaN){
-            document.getElementById("product9").innerHTML=this.pro
-            }
-        }
-    }       
-}
-// start 1 plucking
-document.getElementById("buy1").addEventListener("click", function(){plucking.bought()})
-document.getElementById("buy1").addEventListener("click", function(){plucking.made()})
-document.getElementById("bought1").innerHTML=plucking.number
-document.getElementById("price1").innerHTML=plucking.price
-//2 planting
-document.getElementById("buy2").addEventListener("click", function(){planting.bought()})
-document.getElementById("buy2").addEventListener("click", function(){planting.made()})
-document.getElementById("bought2").innerHTML=planting.number
-document.getElementById("price2").innerHTML=planting.price
-//3 farming
-document.getElementById("buy3").addEventListener("click", function(){farming.bought()})
-document.getElementById("buy3").addEventListener("click", function(){farming.made()})
-document.getElementById("bought3").innerHTML=farming.number
-document.getElementById("price3").innerHTML=farming.price
-//4 factory
-document.getElementById("buy4").addEventListener("click", function(){factory.bought()})
-document.getElementById("buy4").addEventListener("click", function(){factory.made()})
-document.getElementById("bought4").innerHTML=factory.number
-document.getElementById("price4").innerHTML=factory.price
-//5 printing
-document.getElementById("buy5").addEventListener("click", function(){printing.bought()})
-document.getElementById("buy5").addEventListener("click", function(){printing.made()})
-document.getElementById("bought5").innerHTML=printing.number
-document.getElementById("price5").innerHTML=printing.price
-//6 ritual
-document.getElementById("buy6").addEventListener("click", function(){ritual.bought()})
-document.getElementById("buy6").addEventListener("click", function(){ritual.made()})
-document.getElementById("bought6").innerHTML=ritual.number
-document.getElementById("price6").innerHTML=ritual.price
-//7 spells
-document.getElementById("buy7").addEventListener("click", function(){spells.bought()})
-document.getElementById("buy7").addEventListener("click", function(){spells.made()})
-document.getElementById("bought7").innerHTML=spells.number
-document.getElementById("price7").innerHTML=spells.price
-//8 chemistry
-document.getElementById("buy8").addEventListener("click", function(){chemistry.bought()})
-document.getElementById("buy8").addEventListener("click", function(){chemistry.made()})
-document.getElementById("bought8").innerHTML=chemistry.number
-document.getElementById("price8").innerHTML=chemistry.price
-//9 nuclear_fusion
-document.getElementById("buy9").addEventListener("click", function(){nuclear_fusion.bought()})
-document.getElementById("buy9").addEventListener("click", function(){nuclear_fusion.made()})
-document.getElementById("bought9").innerHTML=nuclear_fusion.number
-document.getElementById("price9").innerHTML=nuclear_fusion.price
-//stop of get element 
-//second increase
-function increase1(){
-    increase++
-}
-setInterval(function(){
-    plucking.made(),planting.made(),farming.made(),factory.made(),printing.made(),ritual.made(),spells.made(),chemistry.made(), nuclear_fusion.made(), all(), weight(), imgchange();
-}, 100);
-//increasing function
-function base(){
-    for(var i=0; i<1; i++ ){
-        rice++;
-        document.getElementById("amount").innerHTML= rice;
-    };
+/*
 
-}
-function all(){
-    if(oc==false){
-    totalrice[0]=plucking.pro
-    totalrice[1]=planting.pro
-    totalrice[2]=farming.pro
-    totalrice[3]=factory.pro
-    totalrice[4]=printing.pro
-    totalrice[5]=ritual.pro
-    totalrice[6]=spells.pro
-    totalrice[7]=chemistry.pro
-    totalrice[8]=nuclear_fusion.pro
-    allinall=(Math.round(100*(totalrice[0]+totalrice[1]+totalrice[2]+totalrice[3]+totalrice[4]+totalrice[5]+totalrice[6]+totalrice[7]+totalrice[8]+increase)))/100
-    rice=allinall
-    document.getElementById("amount").innerHTML= rice;
-    }
-}
-//on off
-function toggle(){
-    if(oc==true){
-        oc=false
-        document.getElementById("toggle").disabled=true
-        document.getElementById("toggl").disabled=false
-    }
-    else{
-        document.getElementById("toggl").disabled=true
-        document.getElementById("toggle").disabled=false
-        oc=true
-    }
-}
-function weight(){
-    if(b==0){
-        weigh= (Math.round(100000*(rice/48)))/100000
-        weightword=" grams"
-        buttonword="Kilograms"
-        document.getElementById("weight").innerHTML=weigh
-        document.getElementById("bword").innerHTML=buttonword
-        document.getElementById("word").innerHTML=weightword
-    }
-    if(b==1){
-        weigh=(Math.round(100000000*(rice/48000)))/100000000
-        weightword=" kilograms"
-        buttonword="Metric Tons"
-        document.getElementById("weight").innerHTML=weigh
-        document.getElementById("bword").innerHTML=buttonword
-        document.getElementById("word").innerHTML=weightword
-    }
-    if(b==2){
-        weigh=(Math.round(100000000000*(rice/48000000)))/100000000000
-        weightword=" metric tons"
-        buttonword="Goal"
-        document.getElementById("weight").innerHTML=weigh
-        document.getElementById("bword").innerHTML=buttonword
-        document.getElementById("word").innerHTML=weightword
+A SIMPLE TIC-TAC-TOE GAME IN JAVASCRIPT
 
+(1) Grid layout
+
+The game grid is represented in the array Grid.cells as follows:
+
+[0] [1] [2]
+[3] [4] [5]
+[6] [7] [8]
+
+The cells (array elements) hold the following numeric values:
+0 if not occupied, 1 for player, 3 for computer.
+This allows us to quickly get an overview of the game state:
+if the sum of all the cells in a row is 9, the computer wins,
+if it is 3 and all the cells are occupied, the human player wins,
+etc.
+
+(2) Strategy of makeComputerMove()
+
+The computer first  looks for almost completed rows, columns, and
+diagonals, where there are two fields occupied either by the human
+player or by the computer itself. If the computer can win by
+completing a sequence, it does so; if it can block the player from
+winning with the next move, it does that. If none of that applies,
+it plays the center field if that's free, otherwise it selects a
+random free field. This is not a 100 % certain strategy, but the
+gameplay experience is fairly decent.
+
+*/
+
+//==================================
+// EVENT BINDINGS
+//==================================
+
+// Bind Esc key to closing the modal dialog
+document.onkeypress = function (evt) {
+    evt = evt || window.event;
+    var modal = document.getElementsByClassName("modal")[0];
+    if (evt.keyCode === 27) {
+        modal.style.display = "none";
     }
-    if(b==3){
-        weigh=(Math.round(1000000000000000*(rice/480000000000)))/1000000000000000
-        weightword="% to goal"
-        buttonword="Grams"
-        document.getElementById("weight").innerHTML=weigh
-        document.getElementById("bword").innerHTML=buttonword
-        document.getElementById("word").innerHTML=weightword
+};
+
+// When the user clicks anywhere outside of the modal dialog, close it
+window.onclick = function (evt) {
+    var modal = document.getElementsByClassName("modal")[0];
+    if (evt.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
+//==================================
+// HELPER FUNCTIONS
+//==================================
+function sumArray(array) {
+    var sum = 0,
+        i = 0;
+    for (i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum;
+}
+
+function isInArray(element, array) {
+    if (array.indexOf(element) > -1) {
+        return true;
+    }
+    return false;
+}
+
+function shuffleArray(array) {
+    var counter = array.length,
+        temp,
+        index;
+    while (counter > 0) {
+        index = Math.floor(Math.random() * counter);
+        counter--;
+        temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+    return array;
+}
+
+function intRandom(min, max) {
+    var rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+}
+
+// GLOBAL VARIABLES
+var moves = 0,
+    winner = 0,
+    x = 1,
+    o = 3,
+    player = x,
+    computer = o,
+    whoseTurn = x,
+    gameOver = false,
+    score = {
+        ties: 0,
+        player: 0,
+        computer: 0
+    },
+    xText = "<span class=\"x\">&times;</class>",
+    oText = "<span class=\"o\">o</class>",
+    playerText = xText,
+    computerText = oText,
+    difficulty = 1,
+    myGrid = null;
+
+//==================================
+// GRID OBJECT
+//==================================
+
+// Grid constructor
+//=================
+function Grid() {
+    this.cells = new Array(9);
+}
+
+// Grid methods
+//=============
+
+// Get free cells in an array.
+// Returns an array of indices in the original Grid.cells array, not the values
+// of the array elements.
+// Their values can be accessed as Grid.cells[index].
+Grid.prototype.getFreeCellIndices = function () {
+    var i = 0,
+        resultArray = [];
+    for (i = 0; i < this.cells.length; i++) {
+        if (this.cells[i] === 0) {
+            resultArray.push(i);
+        }
+    }
+    // console.log("resultArray: " + resultArray.toString());
+    // debugger;
+    return resultArray;
+};
+
+// Get a row (accepts 0, 1, or 2 as argument).
+// Returns the values of the elements.
+Grid.prototype.getRowValues = function (index) {
+    if (index !== 0 && index !== 1 && index !== 2) {
+        console.error("Wrong arg for getRowValues!");
+        return undefined;
+    }
+    var i = index * 3;
+    return this.cells.slice(i, i + 3);
+};
+
+// Get a row (accepts 0, 1, or 2 as argument).
+// Returns an array with the indices, not their values.
+Grid.prototype.getRowIndices = function (index) {
+    if (index !== 0 && index !== 1 && index !== 2) {
+        console.error("Wrong arg for getRowIndices!");
+        return undefined;
+    }
+    var row = [];
+    index = index * 3;
+    row.push(index);
+    row.push(index + 1);
+    row.push(index + 2);
+    return row;
+};
+
+// get a column (values)
+Grid.prototype.getColumnValues = function (index) {
+    if (index !== 0 && index !== 1 && index !== 2) {
+        console.error("Wrong arg for getColumnValues!");
+        return undefined;
+    }
+    var i, column = [];
+    for (i = index; i < this.cells.length; i += 3) {
+        column.push(this.cells[i]);
+    }
+    return column;
+};
+
+// get a column (indices)
+Grid.prototype.getColumnIndices = function (index) {
+    if (index !== 0 && index !== 1 && index !== 2) {
+        console.error("Wrong arg for getColumnIndices!");
+        return undefined;
+    }
+    var i, column = [];
+    for (i = index; i < this.cells.length; i += 3) {
+        column.push(i);
+    }
+    return column;
+};
+
+// get diagonal cells
+// arg 0: from top-left
+// arg 1: from top-right
+Grid.prototype.getDiagValues = function (arg) {
+    var cells = [];
+    if (arg !== 1 && arg !== 0) {
+        console.error("Wrong arg for getDiagValues!");
+        return undefined;
+    } else if (arg === 0) {
+        cells.push(this.cells[0]);
+        cells.push(this.cells[4]);
+        cells.push(this.cells[8]);
+    } else {
+        cells.push(this.cells[2]);
+        cells.push(this.cells[4]);
+        cells.push(this.cells[6]);
+    }
+    return cells;
+};
+
+// get diagonal cells
+// arg 0: from top-left
+// arg 1: from top-right
+Grid.prototype.getDiagIndices = function (arg) {
+    if (arg !== 1 && arg !== 0) {
+        console.error("Wrong arg for getDiagIndices!");
+        return undefined;
+    } else if (arg === 0) {
+        return [0, 4, 8];
+    } else {
+        return [2, 4, 6];
+    }
+};
+
+// Get first index with two in a row (accepts computer or player as argument)
+Grid.prototype.getFirstWithTwoInARow = function (agent) {
+    if (agent !== computer && agent !== player) {
+        console.error("Function getFirstWithTwoInARow accepts only player or computer as argument.");
+        return undefined;
+    }
+    var sum = agent * 2,
+        freeCells = shuffleArray(this.getFreeCellIndices());
+    for (var i = 0; i < freeCells.length; i++) {
+        for (var j = 0; j < 3; j++) {
+            var rowV = this.getRowValues(j);
+            var rowI = this.getRowIndices(j);
+            var colV = this.getColumnValues(j);
+            var colI = this.getColumnIndices(j);
+            if (sumArray(rowV) == sum && isInArray(freeCells[i], rowI)) {
+                return freeCells[i];
+            } else if (sumArray(colV) == sum && isInArray(freeCells[i], colI)) {
+                return freeCells[i];
+            }
+        }
+        for (j = 0; j < 2; j++) {
+            var diagV = this.getDiagValues(j);
+            var diagI = this.getDiagIndices(j);
+            if (sumArray(diagV) == sum && isInArray(freeCells[i], diagI)) {
+                return freeCells[i];
+            }
+        }
+    }
+    return false;
+};
+
+Grid.prototype.reset = function () {
+    for (var i = 0; i < this.cells.length; i++) {
+        this.cells[i] = 0;
+    }
+    return true;
+};
+
+//==================================
+// MAIN FUNCTIONS
+//==================================
+
+// executed when the page loads
+function initialize() {
+    myGrid = new Grid();
+    moves = 0;
+    winner = 0;
+    gameOver = false;
+    whoseTurn = player; // default, this may change
+    for (var i = 0; i <= myGrid.cells.length - 1; i++) {
+        myGrid.cells[i] = 0;
+    }
+    // setTimeout(assignRoles, 500);
+    setTimeout(showOptions, 500);
+    // debugger;
+}
+
+// Ask player if they want to play as X or O. X goes first.
+function assignRoles() {
+    askUser("Do you want to go first?");
+    document.getElementById("yesBtn").addEventListener("click", makePlayerX);
+    document.getElementById("noBtn").addEventListener("click", makePlayerO);
+}
+
+function makePlayerX() {
+    player = x;
+    computer = o;
+    whoseTurn = player;
+    playerText = xText;
+    computerText = oText;
+    document.getElementById("userFeedback").style.display = "none";
+    document.getElementById("yesBtn").removeEventListener("click", makePlayerX);
+    document.getElementById("noBtn").removeEventListener("click", makePlayerO);
+}
+
+function makePlayerO() {
+    player = o;
+    computer = x;
+    whoseTurn = computer;
+    playerText = oText;
+    computerText = xText;
+    setTimeout(makeComputerMove, 400);
+    document.getElementById("userFeedback").style.display = "none";
+    document.getElementById("yesBtn").removeEventListener("click", makePlayerX);
+    document.getElementById("noBtn").removeEventListener("click", makePlayerO);
+}
+
+// executed when player clicks one of the table cells
+function cellClicked(id) {
+    // The last character of the id corresponds to the numeric index in Grid.cells:
+    var idName = id.toString();
+    var cell = parseInt(idName[idName.length - 1]);
+    if (myGrid.cells[cell] > 0 || whoseTurn !== player || gameOver) {
+        // cell is already occupied or something else is wrong
+        return false;
+    }
+    moves += 1;
+    document.getElementById(id).innerHTML = playerText;
+    // randomize orientation (for looks only)
+    var rand = Math.random();
+    if (rand < 0.3) {
+        document.getElementById(id).style.transform = "rotate(180deg)";
+    } else if (rand > 0.6) {
+        document.getElementById(id).style.transform = "rotate(90deg)";
+    }
+    document.getElementById(id).style.cursor = "default";
+    myGrid.cells[cell] = player;
+    // Test if we have a winner:
+    if (moves >= 5) {
+        winner = checkWin();
+    }
+    if (winner === 0) {
+        whoseTurn = computer;
+        makeComputerMove();
+    }
+    return true;
+}
+
+// Executed when player hits restart button.
+// ask should be true if we should ask users if they want to play as X or O
+function restartGame(ask) {
+    if (moves > 0) {
+        var response = confirm("Are you sure you want to start over?");
+        if (response === false) {
+            return;
+        }
+    }
+    gameOver = false;
+    moves = 0;
+    winner = 0;
+    whoseTurn = x;
+    myGrid.reset();
+    for (var i = 0; i <= 8; i++) {
+        var id = "cell" + i.toString();
+        document.getElementById(id).innerHTML = "";
+        document.getElementById(id).style.cursor = "pointer";
+        document.getElementById(id).classList.remove("win-color");
+    }
+    if (ask === true) {
+        // setTimeout(assignRoles, 200);
+        setTimeout(showOptions, 200);
+    } else if (whoseTurn == computer) {
+        setTimeout(makeComputerMove, 800);
     }
 }
-function change(){
-    b++
-    if(b==4){
-        b=0
+
+// The core logic of the game AI:
+function makeComputerMove() {
+    // debugger;
+    if (gameOver) {
+        return false;
+    }
+    var cell = -1,
+        myArr = [],
+        corners = [0,2,6,8];
+    if (moves >= 3) {
+        cell = myGrid.getFirstWithTwoInARow(computer);
+        if (cell === false) {
+            cell = myGrid.getFirstWithTwoInARow(player);
+        }
+        if (cell === false) {
+            if (myGrid.cells[4] === 0 && difficulty == 1) {
+                cell = 4;
+            } else {
+                myArr = myGrid.getFreeCellIndices();
+                cell = myArr[intRandom(0, myArr.length - 1)];
+            }
+        }
+        // Avoid a catch-22 situation:
+        if (moves == 3 && myGrid.cells[4] == computer && player == x && difficulty == 1) {
+            if (myGrid.cells[7] == player && (myGrid.cells[0] == player || myGrid.cells[2] == player)) {
+                myArr = [6,8];
+                cell = myArr[intRandom(0,1)];
+            }
+            else if (myGrid.cells[5] == player && (myGrid.cells[0] == player || myGrid.cells[6] == player)) {
+                myArr = [2,8];
+                cell = myArr[intRandom(0,1)];
+            }
+            else if (myGrid.cells[3] == player && (myGrid.cells[2] == player || myGrid.cells[8] == player)) {
+                myArr = [0,6];
+                cell = myArr[intRandom(0,1)];
+            }
+            else if (myGrid.cells[1] == player && (myGrid.cells[6] == player || myGrid.cells[8] == player)) {
+                myArr = [0,2];
+                cell = myArr[intRandom(0,1)];
+            }
+        }
+        else if (moves == 3 && myGrid.cells[4] == player && player == x && difficulty == 1) {
+            if (myGrid.cells[2] == player && myGrid.cells[6] == computer) {
+                cell = 8;
+            }
+            else if (myGrid.cells[0] == player && myGrid.cells[8] == computer) {
+                cell = 6;
+            }
+            else if (myGrid.cells[8] == player && myGrid.cells[0] == computer) {
+                cell = 2;
+            }
+            else if (myGrid.cells[6] == player && myGrid.cells[2] == computer) {
+                cell = 0;
+            }
+        }
+    } else if (moves === 1 && myGrid.cells[4] == player && difficulty == 1) {
+        // if player is X and played center, play one of the corners
+        cell = corners[intRandom(0,3)];
+    } else if (moves === 2 && myGrid.cells[4] == player && computer == x && difficulty == 1) {
+        // if player is O and played center, take two opposite corners
+        if (myGrid.cells[0] == computer) {
+            cell = 8;
+        }
+        else if (myGrid.cells[2] == computer) {
+            cell = 6;
+        }
+        else if (myGrid.cells[6] == computer) {
+            cell = 2;
+        }
+        else if (myGrid.cells[8] == computer) {
+            cell = 0;
+        }
+    } else if (moves === 0 && intRandom(1,10) < 8) {
+        // if computer is X, start with one of the corners sometimes
+        cell = corners[intRandom(0,3)];
+    } else {
+        // choose the center of the board if possible
+        if (myGrid.cells[4] === 0 && difficulty == 1) {
+            cell = 4;
+        } else {
+            myArr = myGrid.getFreeCellIndices();
+            cell = myArr[intRandom(0, myArr.length - 1)];
+        }
+    }
+    var id = "cell" + cell.toString();
+    // console.log("computer chooses " + id);
+    document.getElementById(id).innerHTML = computerText;
+    document.getElementById(id).style.cursor = "default";
+    // randomize rotation of marks on the board to make them look
+    // as if they were handwritten
+    var rand = Math.random();
+    if (rand < 0.3) {
+        document.getElementById(id).style.transform = "rotate(180deg)";
+    } else if (rand > 0.6) {
+        document.getElementById(id).style.transform = "rotate(90deg)";
+    }
+    myGrid.cells[cell] = computer;
+    moves += 1;
+    if (moves >= 5) {
+        winner = checkWin();
+    }
+    if (winner === 0 && !gameOver) {
+        whoseTurn = player;
     }
 }
-function imgchange(){
-    if(rice/480000000000>=0 && rice/480000000000<0.25){
-        let empty=document.querySelector("#cup")
-        empty.setAttribute("src", "media/empty.png")
-    }
-    else if(rice/480000000000>=0.25 && rice/480000000000<0.5){
-        let quarter=document.querySelector("#cup")
-        quarter.setAttribute("src", "media/quarter.png")
-    }
-    else if(rice/480000000000>=0.5 && rice/480000000000<0.75){
-        let half=document.querySelector("#cup")
-        half.setAttribute("src", "media/half.png")
-    }
-    else if(rice/480000000000>=1){
-        let full=document.querySelector("#cup")
-        full.setAttribute("src", "media/full.png")
-    }
-}    
 
+// Check if the game is over and determine winner
+function checkWin() {
+    winner = 0;
 
-document.getElementById("amount").textContent= rice;
+    // rows
+    for (var i = 0; i <= 2; i++) {
+        var row = myGrid.getRowValues(i);
+        if (row[0] > 0 && row[0] == row[1] && row[0] == row[2]) {
+            if (row[0] == computer) {
+                score.computer++;
+                winner = computer;
+                // console.log("computer wins");
+            } else {
+                score.player++;
+                winner = player;
+                // console.log("player wins");
+            }
+            // Give the winning row/column/diagonal a different bg-color
+            var tmpAr = myGrid.getRowIndices(i);
+            for (var j = 0; j < tmpAr.length; j++) {
+                var str = "cell" + tmpAr[j];
+                document.getElementById(str).classList.add("win-color");
+            }
+            setTimeout(endGame, 1000, winner);
+            return winner;
+        }
+    }
+
+    // columns
+    for (i = 0; i <= 2; i++) {
+        var col = myGrid.getColumnValues(i);
+        if (col[0] > 0 && col[0] == col[1] && col[0] == col[2]) {
+            if (col[0] == computer) {
+                score.computer++;
+                winner = computer;
+                // console.log("computer wins");
+            } else {
+                score.player++;
+                winner = player;
+                // console.log("player wins");
+            }
+            // Give the winning row/column/diagonal a different bg-color
+            var tmpAr = myGrid.getColumnIndices(i);
+            for (var j = 0; j < tmpAr.length; j++) {
+                var str = "cell" + tmpAr[j];
+                document.getElementById(str).classList.add("win-color");
+            }
+            setTimeout(endGame, 1000, winner);
+            return winner;
+        }
+    }
+
+    // diagonals
+    for (i = 0; i <= 1; i++) {
+        var diagonal = myGrid.getDiagValues(i);
+        if (diagonal[0] > 0 && diagonal[0] == diagonal[1] && diagonal[0] == diagonal[2]) {
+            if (diagonal[0] == computer) {
+                score.computer++;
+                winner = computer;
+                // console.log("computer wins");
+            } else {
+                score.player++;
+                winner = player;
+                // console.log("player wins");
+            }
+            // Give the winning row/column/diagonal a different bg-color
+            var tmpAr = myGrid.getDiagIndices(i);
+            for (var j = 0; j < tmpAr.length; j++) {
+                var str = "cell" + tmpAr[j];
+                document.getElementById(str).classList.add("win-color");
+            }
+            setTimeout(endGame, 1000, winner);
+            return winner;
+        }
+    }
+
+    // If we haven't returned a winner by now, if the board is full, it's a tie
+    var myArr = myGrid.getFreeCellIndices();
+    if (myArr.length === 0) {
+        winner = 10;
+        score.ties++;
+        endGame(winner);
+        return winner;
+    }
+
+    return winner;
+}
+
+function announceWinner(text) {
+    document.getElementById("winText").innerHTML = text;
+    document.getElementById("winAnnounce").style.display = "block";
+    setTimeout(closeModal, 1400, "winAnnounce");
+}
+
+function askUser(text) {
+    document.getElementById("questionText").innerHTML = text;
+    document.getElementById("userFeedback").style.display = "block";
+}
+
+function showOptions() {
+    if (player == o) {
+        document.getElementById("rx").checked = false;
+        document.getElementById("ro").checked = true;
+    }
+    else if (player == x) {
+        document.getElementById("rx").checked = true;
+        document.getElementById("ro").checked = false;
+    }
+    if (difficulty === 0) {
+        document.getElementById("r0").checked = true;
+        document.getElementById("r1").checked = false;
+    }
+    else {
+        document.getElementById("r0").checked = false;
+        document.getElementById("r1").checked = true;
+    }
+    document.getElementById("optionsDlg").style.display = "block";
+}
+
+function getOptions() {
+    var diffs = document.getElementsByName('difficulty');
+    for (var i = 0; i < diffs.length; i++) {
+        if (diffs[i].checked) {
+            difficulty = parseInt(diffs[i].value);
+            break;
+            // debugger;
+        }
+    }
+    if (document.getElementById('rx').checked === true) {
+        player = x;
+        computer = o;
+        whoseTurn = player;
+        playerText = xText;
+        computerText = oText;
+    }
+    else {
+        player = o;
+        computer = x;
+        whoseTurn = computer;
+        playerText = oText;
+        computerText = xText;
+        setTimeout(makeComputerMove, 400);
+    }
+    document.getElementById("optionsDlg").style.display = "none";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+function endGame(who) {
+    if (who == player) {
+        announceWinner("Congratulations, you won!");
+    } else if (who == computer) {
+        announceWinner("Computer wins!");
+    } else {
+        announceWinner("It's a tie!");
+    }
+    gameOver = true;
+    whoseTurn = 0;
+    moves = 0;
+    winner = 0;
+    document.getElementById("computer_score").innerHTML = score.computer;
+    document.getElementById("tie_score").innerHTML = score.ties;
+    document.getElementById("player_score").innerHTML = score.player;
+    for (var i = 0; i <= 8; i++) {
+        var id = "cell" + i.toString();
+        document.getElementById(id).style.cursor = "default";
+    }
+    setTimeout(restartGame, 800);
+}
