@@ -4,6 +4,12 @@ ADD HEX CODES HERE
 .jacquard-12-regular {
     font-family: "Jacquard 12", system-ui;
     font-weight: 400;
+    font-size: 25px;
+    font-style: normal;
+  }
+  .jacquard-24-regular {
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 400;
     font-style: normal;
   }
   
