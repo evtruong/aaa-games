@@ -43,6 +43,15 @@ const patterns = [
         speed: 0.75
     },
 
+    //log
+    {
+        spacing: [2],
+        color: '#c55843',
+        size: grid * 4,
+        shape: 'rect',
+        speed: 0.75
+    },
+
     //turtle
     {
         spacing: [0, 2, 0, 2, 0, 2, 0, 4],
@@ -51,6 +60,24 @@ const patterns = [
         shape: 'circle',
         speed: -1
     },
+
+    // long log
+  {
+    spacing: [2],
+    color: '#c55843',
+    size: grid * 7,
+    shape: 'rect',
+    speed: 1.5
+  },
+
+  // log
+  {
+    spacing: [3],
+    color: '#c55843',
+    size: grid * 3,
+    shape: 'rect',
+    speed: 0.5
+  },
 
     //beach
     null,
@@ -66,8 +93,126 @@ const patterns = [
 
     //fast car
     {
+        spacing: [14],
+        color: '#c2c4da',
+        size: grid,
+        shape: 'rect',
+        speed: 0.75
+    },
+    
+    //car
+    {
+        spacing: [3,3,7],
+        color: 'de3cdd',
+        size: grid,
+        shape: 'rect',
+        speed: -0.75
+    },
 
+    //bulldozer
+    {
+        spacing: [3,3,7],
+        color: '#0bcb00',
+        size: grid,
+        shape: 'rect',
+        speed: 0.5
+      },
+    
+    //car2
+    {
+        spacing:[4],
+        color: '#e5e401',
+        size: grid,
+        shape: 'rect',
+        speed: -0.5
+    },
+    
+    //startzone
+    null,
+
+];
+
+const rows = [];
+for (let i = 0; 1 < patterns.length; i++) {
+    rows[1]=[];
+
+    let x = 0;
+    let index = 0;
+    const pattern = patterns [i];
+    if (!pattern) {
+        continue;
+      }
+    let totalPatternWidth =
+        pattern.spacing.reduce((acc, space) => acc + space, 0) * grid +
+        pattern.spacing.length * pattern.size;
+        let endX = 0;
+        while(endX < canvas.width){
+            endX += totalPatternWidth
+        }
+        endX += totalPatternWidth;
+
+ 
+  while (x < endX) {
+    rows[i].push(new Sprite({
+      x,
+      y: grid * (i + 1),
+      index,
+      ...pattern
+    }));
+
+    const spacing = pattern.spacing;
+    x += pattern.size + spacing[index] * grid;
+    index = (index + 1) % spacing.length;
+  }
+}
+
+function loop(){
+    requestAnimationFrame(loop);
+    context.clearRect(0,0,canvas.width,canvas.height);
+
+    context.fillStyle = '#000047';
+    context.fillRect(0, grid, canvas.width, grid * 5)
+
+    context.fillStyle = '1ac300'
+    context.fillRect(0, grid, canvaswidth)
+    context.fillRect(0, grid, 5, grid);
+    context.fillRect(canvas.wdith-5, grid, 5, grid)
+    for(let i=0; i<4; i++){
+        context.fillRect(grid + grid * 3 * i, grid, grid * 2, grid);
     }
 
-    
-]
+    context.fillStyle = '#8500da',
+    context.fillRect(0,7 * grid, canvas.width, grid);
+
+    context.fillRect(0, canvas.height - grid * 2, canvas.width, grid);
+
+    for(let r = 0; r < rows.length; r++){
+        const row = rows[r];
+
+        for(let i=0; i<rows.length; i++){
+            const sprite = row[1]
+            sprite.x += sprite.speed;
+            sprite.render();
+
+            if(sprite.speed<0 && sprite.x < 0 - sprite.size){
+
+                let rightMostSprite = sprite;
+                for(let j = 0; j < row.length; j++){
+                    if(row[j].x>rightMostSprite.x){
+                        rightMostSprite=row[j];
+                    }
+                }
+                const spacing = patterns[r].spacing;
+                sprite.x=
+                    rightMostSprite.x + rightMostSprite.size +
+                    spacing[rightMostSprite.index] * grid;
+                sprite.index = (rightMostSprite.index + 1)%spacing.length;
+            }
+
+            if(sprite.speed > 0 && sprite.x > canvas.width) {
+                let leftMostSprite = sprite;
+            }
+        }
+    }
+}
+
