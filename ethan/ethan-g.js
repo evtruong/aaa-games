@@ -1,4 +1,4 @@
-const playBoard = document.querySelector("play-board");
+const playBoard = document.querySelector(".play-board");
 
 let foodX = 13, foodY = 10;
 
