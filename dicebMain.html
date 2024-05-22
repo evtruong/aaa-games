@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12"><!--Navbar-->
                     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" data-bs-theme="dark">
@@ -45,9 +45,49 @@
           
                 </div>
             </div>
-            <div class="row">
+        </div>
+        <div class="container"></div>
+            <div class="row" id="ro1">
                 <div id="top">
                     <h1>The Stressful Dice Battle Game!</h1>
+                </div>
+            </div>
+            <div class="row" id="pops">
+                <div hidden="hidden" class="col-md-4" id="pop-up1">
+                    <h1 class="popmid"><u>Patriotism</u></h1>
+                    <h2 class="popmid" id="pop1place">Your first option</h2>
+                    <p class="popmid">Increases Country's Max Morale</p>
+                    <p class="popmid">Info:</p>
+                    <ul>
+                        <li>Tier 1- +10% Max Morale + Morale</li>
+                        <li>Tier 2- +25% Max Morale + Morale</li>
+                        <li>Tier 3- +50% Max Morale + Morale</li>
+                    </ul>
+                    <button type="button" id="op1">Select</button>
+                </div>
+                <div hidden="hidden" class="col-md-4" id="pop-up2">
+                    <h1 class="popmid"><u>Manpower</u></h1>
+                    <h2 class="popmid" id="pop2place">Your second option</h2>
+                    <p class="popmid">Increases Country's Units left</p>
+                    <p class="popmid">Info:</p>
+                    <ul>
+                        <li>Tier 1- +100 Manpower & 50 Units</li>
+                        <li>Tier 2- +250 Manpower & 125 Units</li>
+                        <li>Tier 3- +500 Manpower & 250 Units</li>
+                    </ul>
+                    <button type="button" id="op2">Select</button>
+                </div>
+                <div hidden="hidden" class="col-md-4" id="pop-up3">
+                    <h1 class="popmid"><u>Luck</u></h1>
+                    <h2 class="popmid" id="pop3place">Your third option</h2>
+                    <p class="popmid">Increases Country's Luck on click events</p>
+                    <p class="popmid">Info:</p>
+                    <ul>
+                        <li>Tier 1- +1 Luck</li>
+                        <li>Tier 2- +2 Luck</li>
+                        <li>Tier 3- +3 Luck</li>
+                    </ul>
+                    <button type="button" id="op3">Select</button>
                 </div>
             </div>
             <div class="row" id="ro2">
@@ -55,10 +95,10 @@
                     <h1 class="statmanage"><u><span id="usersnameone">Your </span>'s Roll:</u></h1>
                     <br>
                     <div id="userspace">
-                        <img id="userimg" src="diemedia/questionmark.jpg">
+                        <img id="userimg" src="diemedia/questionmark.jpg" alt="Image of User">
                     </div>
                     <p id="num1"></p>
-                 </div>
+                </div>
                 <div id="chamber" class="col-md-4">
                     <h1 class="battlewin">:Battlefield:</h1>
                     <h1 id="user"></h1><h1 id="enemy"></h1>
@@ -66,7 +106,7 @@
                 <div id="side2" class="col-md-4">
                         <h1><u>:Enemy Roll</u></h1>
                         <div id="enemyspace">
-                            <img id="enemyimg" src="diemedia/questionmark.jpg">
+                            <img id="enemyimg" src="diemedia/questionmark.jpg" alt="Image of Enemy">
                         </div>
                 </div>
             </div>
@@ -74,20 +114,29 @@
                 <div class="col-md-4">
                     <h3 class="statmanage"><u><span id="usersnametwo">Your</span>'s Stats:</u></h3>
                     <br>
-                    <p class="statmanage">Units Left: </p><p id="healthstat" class="statmanage">0</p>
+                    <p class="statmanage">Population: </p><p id="population" class="statmanage">0</p>
                     <br>
-                    <p class="statmanage">Total Battles: </p> <p id="totalbattles" class="statmanage">0</p>
+                    <p class="statmanage">Manpower: </p><p id="maxhealthstat" class="statmanage">0</p>
+                    <br>
+                    <p class="statmanage">Units: </p><p id="healthstat" class="statmanage">0</p>
+                    <br>
+                    <p class="statmanage">Total Battles: </p><p id="totalbattles" class="statmanage">0</p>
+                    <br>
+                    <p class="statmanage">Wars Won: </p><p id="warswon" class="statmanage">0</p><p class="statmanage"></p>
                     <br>
                     <p class="statmanage">Wins: </p><p id="winsstat" class="statmanage">0</p>
                     <br>
-                    <p class="statmanage">Losses: </p> <p id="lossesstat" class="statmanage">0</p>
+                    <p class="statmanage">Losses: </p><p id="lossesstat" class="statmanage">0</p>
                     <br>
                     <p class="statmanage">Draws: </p><p id="drawsstat" class="statmanage">0</p>
                     <br>
-                    <p class="statmanage">Soldiers Killed: </p> <p id="soldiersKstat" class="statmanage">0</p>
+                    <p class="statmanage">Soldiers Killed: </p><p id="soldiersKstat" class="statmanage">0</p>
                     <br>
-                    <p class="statmanage">Win/Loss Ratio: </p> <p id="winlossratio" class="statmanage">0</p><p class="statmanage">%</p>
+                    <p class="statmanage">Country's Morale: </p><p id="peoplemot" class="statmanage">100</p><p class="statmanage">%</p>
                     <br>
+                    <p class="statmanage">Max Country's Morale: </p><p id="maxpeoplemot" class="statmanage">100</p><p class="statmanage">%</p>
+                    <br>
+                    <p class="statmanage">Luck: </p><p class="statmanage">+</p><p id="countryluck" class="statmanage">0</p>
                 </div>
                 <div id="battlefield" class="col-md-4">
                     <h1 class="battlewin"><u>Results:</u></h1>
@@ -96,9 +145,9 @@
                 <div class="col-md-4">
                     <h3 class="enemylay"><u>:Enemy Leader</u></h3>
                     <br>
-                    <p class="statmanage" id="enemylevel"></p><p class="statmanage">:Enemy Level</p>
+                    <p id="enemylevel" class="statmanage eneSide"></p><p class="statmanage eneSide"> :Enemy Level</p>
                     <br>
-                    <p id="enemyhealthstat" class="statmanage"></p><p class="statmanage">:Units left</p>
+                    <p id="enemyhealthstat" class="statmanage eneSide"></p><p class="statmanage eneSide"> :Units left</p>
                 </div>
             </div>
             <button type="button" id="roll">Conquer!</button>
@@ -106,6 +155,7 @@
             <audio loop autoplay>
                 <source src="diemedia/SnowDay-NIC-OST.mp3" type="audio/mpeg">
             </audio>
+        </div>
             <!--Start of Footer-->
         <footer>
             <div class="row bg-secondary">
