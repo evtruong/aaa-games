@@ -211,8 +211,83 @@ function loop(){
 
             if(sprite.speed > 0 && sprite.x > canvas.width) {
                 let leftMostSprite = sprite;
+                for(let j = 0; j<row.length; j++){
+                    if (row[j].x < leftMostSprite.x){
+                        leftMostSprite = row[j];
+                    }
+                }
+            const spacing = patterns[r].spacing;
+                let index = leftMostSprite.index - 1;
+                index = index >= 0 ? index : spacing.length - 1;
+                sprite.x = leftMostSprite.x - spacing[index] * grid - sprite.size;
+                sprite.index = index;    
             }
         }
     }
+
+    //render frogger
+    frogger.x += frogger.speed || 0;
+    frogger.render();
+
+    scoredFroggers.forEach(frog => frog.render());
+
+    const froggerRow = frogger.y / grid - 1 | 0
+    let collision = false;
+    for (let i = 0; i < rows[froggerRow.length]; i++){
+        let sprite = rows[froggerRow][i];
+
+        if(frogger.x < sprite.x + sprite.size - gridGap &&
+            frogger.x + grid  - gridGap > sprite.x &&
+            frogger.y < sprite.y + grid &&
+            frogger.y + grid > sprite.y) {
+        collision = true;
+        
+        if (froggerRow > rows.length / 2){
+            frogger.x = grid * 6;
+            frogger.y = grid * 13;
+        }
+        
+            else{
+                frogger.speed = sprite.speed;
+            }
+        }
+        
+    }
+    if(!collision){
+        frogger.speed = 0;
+
+        const col = (frogger.x + grid / 2) / grid | 0;
+        if(froggerRow === 0 && col % 3 === 0 &&
+        !scoredFroggers.find(frog => frog.x === col * grid)){
+        scoredFroggers.push(new Sprite({
+            ...frogger,
+            x: col * grid,
+            y: frogger.y + 5
+            }));        
+        }
+        document.addEventListener('keydown', function(e) {
+        //arrow key left
+        if(e.which === 37){
+            frogger.x -= grid;
+        } 
+        //arrow key right
+        else if(e.which == 39){
+            frogger.x += grid;
+        }
+        //arrow key up
+        else if (e.which === 38) {
+            frogger.y -= grid;
+          }
+        else if(e.which == 40){
+            frogger.y += grid;
+        }
+
+        frogger.x = Math.min(Math.max(0, frogger.x), canvas.width - grid);
+        frogger.y = Math.min(Math.max(grid, frogger.y), canvas.height - grid * 2);
+        });
+        
+        requestAnimationFrame(loop);
+    }
+
 }
 
