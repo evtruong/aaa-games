@@ -224,42 +224,42 @@ var dice = {
 
     //Determines the image presented based on the roll (FOR THE USER)//
     if (result===1){
-      var dierolled = "diemedia/dice-1.jpg";
+      var dierolled = "media/dice-1.jpg";
     }
     else if (result===2){
-      var dierolled = "diemedia/dice-2.jpg";
+      var dierolled = "media/dice-2.jpg";
     }
     else if (result===3){
-      var dierolled = "diemedia/dice-3.jpg";
+      var dierolled = "media/dice-3.jpg";
     }
     else if (result===4){
-      var dierolled = "diemedia/dice-4.jpg";
+      var dierolled = "media/dice-4.jpg";
     }
     else if (result===5){
-      var dierolled = "diemedia/dice-5.jpg";
+      var dierolled = "media/dice-5.jpg";
     }
     else if (result===6){
-      var dierolled = "diemedia/dice-6.jpg";
+      var dierolled = "media/dice-6.jpg";
     }
 
     //Determines the image presented based on the roll (FOR THE ENEMY)//
       if (enemyresult===1){
-        var enemydierolled = "diemedia/dice-1.jpg";
+        var enemydierolled = "media/dice-1.jpg";
       }
       else if (enemyresult===2){
-        var enemydierolled = "diemedia/dice-2.jpg";
+        var enemydierolled = "media/dice-2.jpg";
       }
       else if (enemyresult===3){
-        var enemydierolled = "diemedia/dice-3.jpg";
+        var enemydierolled = "media/dice-3.jpg";
       }
       else if (enemyresult===4){
-        var enemydierolled = "diemedia/dice-4.jpg";
+        var enemydierolled = "media/dice-4.jpg";
       }
       else if (enemyresult===5){
-        var enemydierolled = "diemedia/dice-5.jpg";
+        var enemydierolled = "media/dice-5.jpg";
       }
       else if (enemyresult===6){
-        var enemydierolled = "diemedia/dice-6.jpg";
+        var enemydierolled = "media/dice-6.jpg";
       }
     //The if statement that allows the user to continue fighting
     function determineEnd(result){
@@ -404,8 +404,8 @@ var dice = {
     document.getElementById("user").innerHTML = "";
     document.getElementById("enemy").innerHTML = "";
     document.getElementById("resultofwinner").innerHTML = "";
-    document.querySelector("#userimg").setAttribute("src","diemedia/questionmark.jpg");
-    document.querySelector("#enemyimg").setAttribute("src","diemedia/questionmark.jpg");
+    document.querySelector("#userimg").setAttribute("src","media/questionmark.jpg");
+    document.querySelector("#enemyimg").setAttribute("src","media/questionmark.jpg");
     var completedOnce = "true";
     customPrompt(completedOnce);
   }
