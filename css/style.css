@@ -12,5 +12,11 @@ ADD HEX CODES HERE
     font-weight: 400;
     font-style: normal;
   }
+  /*THE NEW CSS CODE FOR FOOTER BELOW*/
+  footer{
+    position: fixed;
+    font-size: small;
+    bottom: 0px;
+  }
   
   
