@@ -25,7 +25,7 @@
 #ro1,#ro2,#ro3 {
     padding-top:20px;
 }
-#roll,#restart {
+#roll,#restart,#auto,#endauto {
     display:block;
     margin:auto;
     margin-top:10px;

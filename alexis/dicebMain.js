@@ -2,10 +2,13 @@
 //Enemy statistics
 var enemystatistics = {
   unitsleftE:200,
-  disasterluck:500,
+  disasterluck:1000,
   disastergoodluck:1000,
   presgoodluck:1,
   presbadluck:1,
+  smallbadluck:500, //Not Used
+  smallbadluckU:1,
+  misfortune:1, //Misfortune luck stat
 }
 //Player statistics as they play the game
 var statistics = {
@@ -20,9 +23,10 @@ var statistics = {
   warswon:0, 
   morale:100,
   maxmorale:100,
-  goodluck:500,
-  badluck:1,
-  luckstage:0,
+  goodluck:500, //Working
+  badluck:1, 
+  luckstage:0, //Working
+  misfortuneU:0, //Misfortune counter
 
   win:function(){
     this.wins=this.wins+1;
@@ -113,7 +117,7 @@ var statistics = {
         gameOver();
       }
       else{
-        this.morale = this.morale-2;
+        this.morale = this.morale-3;
       }
     }
     var moraleStat = document.getElementById("peoplemot");
@@ -175,7 +179,7 @@ var statistics = {
   //Used to set the level of the Enemy
   var enemylevel = [1,2,3,4];
   function enemiesCreate(){
-    let enemyskill = Math.round(Math.random() * 10);
+    let enemyskill = Math.round(Math.random() * 15);
     randomizeEncounter(enemyskill);
   }
   //Used to determine the reward after every 10 rounds
@@ -183,9 +187,9 @@ var statistics = {
   var randomReward2 = ["Tier 1","Tier 2","Tier 3"]
   var randomReward3 = ["Tier 1","Tier 2","Tier 3"]
   function rewardCreate(){
-    let reward1 = Math.round(Math.random()*10);
-    let reward2 = Math.round(Math.random()*10);
-    let reward3 = Math.round(Math.random()*10);
+    let reward1 = Math.round(Math.random()*15);
+    let reward2 = Math.round(Math.random()*15);
+    let reward3 = Math.round(Math.random()*15);
     let inReward1 = randomizeReward1(reward1);
     let inReward2 = randomizeReward2(reward2);
     let inReward3 = randomizeReward3(reward3);
@@ -224,42 +228,42 @@ var dice = {
 
     //Determines the image presented based on the roll (FOR THE USER)//
     if (result===1){
-      var dierolled = "media/dice-1.jpg";
+      var dierolled = "diemedia/dice-1.jpg";
     }
     else if (result===2){
-      var dierolled = "media/dice-2.jpg";
+      var dierolled = "diemedia/dice-2.jpg";
     }
     else if (result===3){
-      var dierolled = "media/dice-3.jpg";
+      var dierolled = "diemedia/dice-3.jpg";
     }
     else if (result===4){
-      var dierolled = "media/dice-4.jpg";
+      var dierolled = "diemedia/dice-4.jpg";
     }
     else if (result===5){
-      var dierolled = "media/dice-5.jpg";
+      var dierolled = "diemedia/dice-5.jpg";
     }
     else if (result===6){
-      var dierolled = "media/dice-6.jpg";
+      var dierolled = "diemedia/dice-6.jpg";
     }
 
     //Determines the image presented based on the roll (FOR THE ENEMY)//
       if (enemyresult===1){
-        var enemydierolled = "media/dice-1.jpg";
+        var enemydierolled = "diemedia/dice-1.jpg";
       }
       else if (enemyresult===2){
-        var enemydierolled = "media/dice-2.jpg";
+        var enemydierolled = "diemedia/dice-2.jpg";
       }
       else if (enemyresult===3){
-        var enemydierolled = "media/dice-3.jpg";
+        var enemydierolled = "diemedia/dice-3.jpg";
       }
       else if (enemyresult===4){
-        var enemydierolled = "media/dice-4.jpg";
+        var enemydierolled = "diemedia/dice-4.jpg";
       }
       else if (enemyresult===5){
-        var enemydierolled = "media/dice-5.jpg";
+        var enemydierolled = "diemedia/dice-5.jpg";
       }
       else if (enemyresult===6){
-        var enemydierolled = "media/dice-6.jpg";
+        var enemydierolled = "diemedia/dice-6.jpg";
       }
     //The if statement that allows the user to continue fighting
     function determineEnd(result){
@@ -286,8 +290,9 @@ var dice = {
         battleColor(result,enemyresult);
         statistics.tallydeath(result,enemyresult);
         statistics.countrypop();
-        battleEvents();
         ultimateBattleEvents();
+        negativeluck();
+        battleEvents();
         breakEvent();
       }
     }
@@ -367,8 +372,8 @@ var dice = {
    //Prompt that the user is greeted with to know how many units they'd like to use
    //Attempt to make it so the user can only input integer values//
    document.addEventListener("onload",customPrompt());
-   function customPrompt(completedOnce){
-    let totalUnits = parseInt(prompt("How many units would you like to have?"));
+   function customPrompt(completedOnce){ 
+    let totalUnits = parseInt(prompt("How many units would you like to have?")); //Change - Add a prompt to ask for difficulty which changes the amount of units you get
     statistics.unit(totalUnits);
     if (completedOnce === "true"){
       enemiesCreate()
@@ -396,30 +401,36 @@ var dice = {
     document.getElementById("countryluck").innerHTML = statistics.luckstage = 0;
     document.getElementById("warswon").innerHTML = statistics.warswon = 0;
     document.getElementById("population").innerHTML = statistics.population = 0;
+    document.getElementById("countrybadluck").innerHTML = statistics.misfortuneU = 0;
     enemystatistics.disastergoodluck = 1000;
+    enemystatistics.disasterluck = 1000;
     enemystatistics.presgoodluck = 1;
+    enemystatistics.presbadluck = 1;
     statistics.goodluck = 500;
+    enemystatistics.misfortune = 1;
     statistics.badluck = 1;
+    enemystatistics.smallbadluckU = 500;
+    enemystatistics.smallbadluckU = 1;
     document.getElementById("roll").removeAttribute("hidden");
     document.getElementById("user").innerHTML = "";
     document.getElementById("enemy").innerHTML = "";
     document.getElementById("resultofwinner").innerHTML = "";
-    document.querySelector("#userimg").setAttribute("src","media/questionmark.jpg");
-    document.querySelector("#enemyimg").setAttribute("src","media/questionmark.jpg");
-    var completedOnce = "true";
+    document.querySelector("#userimg").setAttribute("src","diemedia/questionmark.jpg");
+    document.querySelector("#enemyimg").setAttribute("src","diemedia/questionmark.jpg");
+    var completedOnce = "true"; //Change
     customPrompt(completedOnce);
   }
   //FIND A SIMPLER WAY TO DO THIS ABOVE//
   function randomizeEncounter(enemyskill){
-    if (enemyskill>0 && enemyskill<5){
+    if (enemyskill>0 && enemyskill<7){
       enemyskill = enemylevel[0];
       setEnemyStats(enemyskill);
     }
-    else if(enemyskill>=5 && enemyskill<8){
+    else if(enemyskill>=7 && enemyskill<11){
       enemyskill = enemylevel[1];
       setEnemyStats(enemyskill);
     }
-    else if(enemyskill==8 || enemyskill==9){
+    else if(enemyskill>=12 && enemyskill<15){
       enemyskill = enemylevel[2];
       setEnemyStats(enemyskill);
     }
@@ -458,10 +469,10 @@ var dice = {
   }
   //Sets values to an event for div 1//CURRENT
   function randomizeReward1(reward1){
-    if (reward1>0 && reward1<7){
+    if (reward1>0 && reward1<10){
       return randomReward1[0];
     }
-    else if (reward1>=7 && reward1<10){
+    else if (reward1>=10 && reward1<15){
       return randomReward1[1];
     }
     else{
@@ -470,10 +481,10 @@ var dice = {
   }
   //Sets values to an event for div 2
   function randomizeReward2(reward2){
-    if (reward2>0 && reward2<7){
+    if (reward2>0 && reward2<10){
       return randomReward2[0];
     }
-    else if (reward2>=7 && reward2<10){
+    else if (reward2>=10 && reward2<15){
       return randomReward2[1];
     }
     else{
@@ -482,10 +493,10 @@ var dice = {
   }
   //Sets values for an event for div 3
   function randomizeReward3(reward3){
-    if (reward3>0 && reward3<7){
+    if (reward3>0 && reward3<10){
       return randomReward3[0];
     }
-    else if (reward3>=7 && reward3<10){
+    else if (reward3>=10 && reward3<15){
       return randomReward3[1];
     }
     else{
@@ -541,7 +552,7 @@ var dice = {
     var ev2 = document.getElementById("pop2place").innerHTML;
     if(ev2==="Tier 1"){
       statistics.manpower = statistics.manpower+100;
-      statistics.unitsleft = statistics.unitsleft+50;
+      statistics.unitsleft = statistics.unitsleft+75;
       document.getElementById("maxhealthstat").innerHTML = statistics.manpower;
       document.getElementById("healthstat").innerHTML = statistics.unitsleft;
       statistics.countrypop();
@@ -549,7 +560,7 @@ var dice = {
     }
     else if(ev2==="Tier 2"){
       statistics.manpower = statistics.manpower+250;
-      statistics.unitsleft = statistics.unitsleft+125;
+      statistics.unitsleft = statistics.unitsleft+175;
       document.getElementById("maxhealthstat").innerHTML = statistics.manpower;
       document.getElementById("healthstat").innerHTML = statistics.unitsleft;
       statistics.countrypop();
@@ -614,7 +625,10 @@ var dice = {
     var ultUEC = Math.round(Math.random()*1000);
     var ultEEC = Math.round(Math.random()*1000);
     ultimateExEvent(ultUEC, ultEEC);
-    //ultimateExEvent2(ultUEC2,ultEEC2);//WORK ON
+  }
+  function negativeluck(){
+      var negluck = Math.round(Math.random()*2000);
+      badExEvent(negluck);  
   }
   function exEvent(userEC,enemyEC){
     if(userEC >= statistics.goodluck){
@@ -627,13 +641,13 @@ var dice = {
       }
       document.getElementById("healthstat").innerHTML = statistics.unitsleft;
     }
-    else if (enemyEC===250){
+    else if (enemyEC >= enemystatistics.smallbadluck){
       alert("Your Enemy's Country Has Drafted More Units!");
       enemystatistics.unitsleftE = enemystatistics.unitsleftE+100;
       document.getElementById("enemyhealthstat").innerHTML = enemystatistics.unitsleftE;
     }
     //FIX THIS CODE
-    else if (userEC===1){
+    else if (userEC <=enemystatistics.smallbadluckU){
       alert("Your Country Is Tired of The War!");
       statistics.unitsleft = statistics.unitsleft-100;
       if(statistics.unitsleft<=100){
@@ -654,7 +668,7 @@ var dice = {
     else{}
   }
   function ultimateExEvent(ultUEC,ultEEC){
-    if (ultUEC <= enemystatistics.presgoodluck){
+    if (ultUEC >= enemystatistics.disastergoodluck){ //roll >= 1000
       alert("Your President Has Given a Motivating Speech!");
       if( Math.floor(statistics.unitsleft*1.5) >= statistics.manpower){
         statistics.unitsleft = statistics.manpower;
@@ -667,25 +681,36 @@ var dice = {
       document.getElementById("peoplemot").innerHTML = statistics.morale;
 
     }
-    else if(ultEEC === 1){
+    else if(ultEEC >= enemystatistics.disasterluck){ //roll >= 1000
       alert("Their President Has Given a Motivating Speech!");
-      enemystatistics.unitsleftE = Math.round(statistics.unitsleft*1.5);
+      enemystatistics.unitsleftE = Math.round(enemystatistics.unitsleftE*1.5);
       document.getElementById("enemyhealthstat").innerHTML = enemystatistics.unitsleftE;
     }
-    else if(ultUEC >= enemystatistics.disastergoodluck){
+    else if(ultUEC <= enemystatistics.presgoodluck){ //roll <= 1
       alert("Their President Has Been Assasinated!");
       enemystatistics.unitsleftE = Math.round(enemystatistics.unitsleftE/2);
       document.getElementById("enemyhealthstat").innerHTML = enemystatistics.unitsleftE;
     }
-    else if(ultEEC === 500){
+    else if(ultEEC <= enemystatistics.presbadluck){ //roll <= 1
       alert("Your President Has Been Assasinated!");
+      statistics.manpower = Math.round((statistics.manpower/3)*4);
       statistics.unitsleft = Math.round(statistics.unitsleft/2);
       document.getElementById("healthstat").innerHTML = statistics.unitsleft;
     }
   }
-  //function ultimateExEvent2(ultUEC2,ultEEC2){
-  //WORK ON MAYBE
-  //}
+  function badExEvent(negluck){
+    if(negluck <= enemystatistics.misfortune){
+      alert("Misfortune has been brought onto your country...");
+      enemystatistics.presbadluck = enemystatistics.presbadluck+1;
+      enemystatistics.misfortune = enemystatistics.misfortune+2;
+      enemystatistics.disasterluck = enemystatistics.disasterluck-1;
+      enemystatistics.smallbadluck = enemystatistics.smallbadluck-1;
+      enemystatistics.smallbadluckU = enemystatistics.smallbadluckU+1; 
+      statistics.misfortuneU = statistics.misfortuneU+1;
+      document.getElementById("countrybadluck").innerHTML = statistics.misfortuneU;
+    }
+    else{}
+  }
   function breakEvent(){
     if(statistics.totalbattles%50===0){ //Determine later to find balanced game
       alert("Choose your reward!");
@@ -696,6 +721,31 @@ var dice = {
   function gameOver(){
     alert("Your time as a Military Leader Has Come to an End!");
     document.getElementById("roll").setAttribute("hidden","hidden");
+    
+     //Change
+  }
+  var auto = document.getElementById("auto");
+  var endauto = document.getElementById("endauto");
+  var autoclick;
+  auto.onclick = function(){
+    auto.setAttribute("hidden","hidden")
+    endauto.removeAttribute("hidden")
+    autoclick = setInterval(autoclicker,250,autoclick);
+    autoclick;
+  }
+  function autoclicker(autoclick){
+    var autobreak = document.getElementById("pop-up1").hasAttribute("hidden");
+    if (autobreak===false || document.getElementById("roll").hasAttribute("hidden")){
+      clearInterval(autoclick);
+    }
+    else{
+      button.onclick();
+    }
+  }
+  endauto.onclick = function(){
+    clearInterval(autoclick);
+    endauto.setAttribute("hidden","hidden")
+    auto.removeAttribute("hidden")
   }
   //Economy to buy units? - TBD //
   //Random events that could on a click? - Somewhat worked on//
@@ -706,6 +756,7 @@ var dice = {
     //Implement Natural Disaster Luck //DONE --- Add Population/Max Units (So manpower sort of makes more sense)
     //On upgrades, double manpower things and halve the amount of units gained (you'll know what I mean)
     //Somtimes rewards occur twice, fix that
+    //Fix luck event (THE NAMES)
     //Add autoclicker
     //Change Alerts to divs
     //Design
