@@ -1,3 +1,4 @@
+
 var name=prompt("What would your user name be?")
 document.getElementById("name1").innerHTML = name;
 //main section//
@@ -11,6 +12,7 @@ var buttonword="o"
 var total=0
 var b=0
 var increase=0
+
 var plucking= {
     number:1,
     price:15,
