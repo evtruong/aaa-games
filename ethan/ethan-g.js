@@ -11,20 +11,23 @@ let setIntervalId;
 let score = 0;
 let highScore = localStorage.getItem('highScore') || 0; // Load high score from localStorage
 
+const storeScore = () => {
+  // Update high score if current score is higher
+    if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('highScore', highScore); // Store high score in localStorage
+        highScoreElement.innerText = `High Score: ${highScore}`;
+    }
+}
+
 const changeFoodPosition = () => {
     // Passing a random 0 - 30 value as food position
     foodX = Math.floor(Math.random() * 30) + 1;
     foodY = Math.floor(Math.random() * 30) + 1;
 }
 
-const handleGameOver = () => {
+const handleOver = () => {
     clearInterval(setIntervalId);
-    // Update high score if current score is higher
-    if (score > highScore) {
-        highScore = score;
-        localStorage.setItem('highScore', highScore); // Store high score in localStorage
-        highScoreElement.innerText = `High Score: ${highScore}`;
-    }
     alert("Game Over! Press OK to replay... ");
     location.reload();
 }
@@ -50,7 +53,7 @@ const changeDirection = (e) => {
 }
 
 const initGame = () => {
-    if(gameOver) return handleGameOver();
+    if(gameOver) return handleOver();
     let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX} "></div>`;
 
     if(snakeX === foodX && snakeY === foodY){
@@ -59,6 +62,8 @@ const initGame = () => {
         score++; // increment score by 1
         scoreElement.innerText = `Score: ${score}`;
     }
+  
+    storeScore();
 
     for (let i = snakeBody.length - 1; i > 0; i--){
         // Shifting forward the values of the elements in the snake body by one
