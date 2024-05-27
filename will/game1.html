@@ -5,35 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Factory</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-     
-    <div class="container-fluid tba">
-
-      <div class="row"> <!--Navbar-->
-      <nav class="navbar navbar-expand-lg bg-body-dark mb-3" data-bs-theme="dark">
+    <div class=" container-fluid">
+    <div class="row bg-secondary"> <!--Navbar-->
+      <nav class="navbar navbar-expand-lg mb-3" data-bs-theme="dark">
         <div class="container-fluid">
-        <a class="navbar-brand jacquard-12-regular" href="index.html">AAA Games</a>
+        <a class="navbar-brand" href="index.html">AAA Games</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav nav-underline">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Our Games
                 </a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="will/game1.html">Will's Rice Production Line</a></li>
+                <li><a class="dropdown-item" href="will/game1.html">The Rice Production Line</a></li>
                 <li><a class="dropdown-item" href="dan/daniel.html">Daniel Game Name</a></li>
                 <li><a class="dropdown-item" href="alexis/dicebMain.html">The Stressful Dice Battle Game</a></li>
                 <li><a class="dropdown-item" href="et-page.html">Ethan's Game Name</a></li>
@@ -45,234 +41,274 @@
         </div>
     </nav>
     </div>
-
-
-      <div class="row border border-primary">
-        <h1 class="border border-primary col-md-3 col-sm-3"><span id="demo"></span>'s rice production line</h1>
-        <h1 id="amount"class="col-md-8 col-sm-8">1</h1>
-      </div>
-      <div class="row">
-          <div class="col-lg-3">
-            <button id="increase1" onclick="increase1()" class=" onebtn onebtnbac">
-              <input type="image" src="media/dropper.png" class="onebtnimg">
-            </button>
-          </div>
-          <div class="col-lg-3">
-            <br>
-          </div>
-          <div class="col-lg-3">
-            <img src="media/belt.gif" alt="bob" class="beltfix">
-          </div>
-        <div class="col-lg-3">
-          <button id="buy1">
-            <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-            </button>
-          <p id="bought1">0</p>
-          <p id="price1">1</p>
-          <p id="product1">1</p>
-        </div>
-      </div>
-      <div>
-        <button class="chabutton" id="different" onclick="change()"><span id="bword"></span></button>
-      </div>
-      <div class="may">
-        <p><span id="weight"></span><span id="word"></span></p>
-        
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <img id="cup" src="" alt="no" class="bowl">
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix">
-        </div>
-        <div class="col-lg-3">
-          <button id="buy2">
-            <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-          </button>
-          <p id="bought2">0</p>
-          <p id="price2">1</p>
-          <p id="product2">1</p>
-        </div>
-      </div>
-      <!--3-->
-      <div class="posfix">
-      <div class="row">
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix beltfix1">
-        </div>
-        <div class="col-lg-3 posfix1">
-          <button id="buy3">
-            <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-          </button>
-          <p id="bought3">0</p>
-          <p id="price3">1</p>
-          <p id="product3">1</p>
-        </div>
-      </div>
-      <!--4-->
-      <div class="row">
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix beltfix1">
-        </div>
-        <div class="col-lg-3 posfix1">
-        <button id="buy4"> 
-          <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-        </button>
-        <p id="bought4">0</p>
-        <p id="price4">1</p>
-        <p id="product4">1</p>
-        </div>
-      </div>
-      <!--5-->
-      <div class="row">
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix beltfix1">
-        </div>
-        <div class="col-lg-3 posfix1">
-        <button id="buy5">
-          <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-        </button>
-        <p id="bought5">0</p>
-        <p id="price5">1</p>
-        <p id="product5">1</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix beltfix1">
-        </div>        
-        <div class="col-lg-3 posfix1">
-        <button id="buy6">
-          <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-        </button>
-        <p id="bought6">0</p>
-        <p id="price6">1</p>
-        <p id="product6">1</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix beltfix1">
-        </div>
-        <div class="col-lg-3 posfix1">
-        <button id="buy7">
-          <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-        </button>
-        <p id="bought7">0</p>
-        <p id="price7">1</p>
-        <p id="product7">1</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix beltfix1">
-        </div>
-        <div class="col-lg-3 posfix1">
-        <button id="buy8">
-          <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-        </button>
-        <p id="bought8">0</p>
-        <p id="price8">1</p>
-        <p id="product8">1</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <br>
-        </div>
-        <div class="col-lg-3">
-          <img src="media/belt.gif" alt="bob" class="beltfix beltfix1">
-        </div>        
-        <div class="col-lg-3 posfix1">
-        <button id="buy9">
-          <img src="media/placeholder.png" alt="placeholder" width="200px" height="100px"> 
-        </button>
-        <p id="bought9">0</p>
-        <p id="price9">1</p>
-        <p id="product9">1</p>
-        </div>
-      </div>
-      </div>
-    </div>      
-        <button id="toggle" onclick="toggle()"> <p>On</p></button><button id="toggl" onclick="toggle()"><p>off</p></button>
-        
-
-      <!--Start of Footer-->
-      <footer class="position-relative bottom-0">
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <h2>Where we are:</h2>
-            </div>
-        </div>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <a href="http://www.youtube.com/@AAA_gamess" target="_blank"><i class="bi bi-youtube"></i></a>
-            </div>
-        </div>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <h2>Main Support Email:</h2>
-            </div>
-        </div>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <h3><u>truong.skool009@gmail.com</u></h3>
-            </div>
-        </div>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <p><i>Made by Ethan Truong, Daniel Santiago, William Robbins, Alexis Pelaez, and Angel Gonzalez</i></p>
-            </div>
-        </div>
-      </footer>
-      <!--End of Footer-->
-
     </div>
+  <div class="container tba bodythingy">
+    <!--Name and amount and on/off-->
+    <div class="row">
+      <!--Name-->
+      <div class="col-3">
+        <h1><span id="name1"></span>'s rice factory</h1>
+      </div>
+      <!--Amount-->
+      <div class="col-7 text-center">
+        <h1><span id="amount">0</span> rice grains</h1>
+      </div>
+      <div class="col-1">
+        <button id="help" onclick="help()">Help</button>
+      </div>
+      <div class="col-1">
+        <button id="toggle" onclick="toggle()"> <p>On</p></button><button id="toggl" onclick="toggle()"><p>off</p></button>
+      </div>
+    </div>
+    <!--Start of #1-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <div class="width-25">
+        <button id="increase1" onclick="increase1()" class=" onebtn onebtnbac">
+          <input type="image" src="media/dropper.png" class="width-25">
+        </button>
+        </div>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy1" class=" onebtn onebtnbac">
+          <input type="image" src="media/plucking.png" class="buybtn">
+        </button>
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought1">0</h1>
+        <h1 id="price1">1</h1>
+        <h1 id="product1">0</h1>
+      </div>
+    </div>
+    <!--Start of 2-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy2" class=" onebtn onebtnbac">
+          <input type="image" src="media/planting.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought2">0</h1>
+        <h1 id="price2">1</h1>
+        <h1 id="product2">0</h1>
+      </div>
+    </div>
+    <!--Start of 3-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy3" class=" onebtn onebtnbac">
+          <input type="image" src="media/farming.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought3">0</h1>
+        <h1 id="price3">1</h1>
+        <h1 id="product3">0</h1>
+      </div>
+    </div>
+    <!--Start of 4-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy4" class=" onebtn onebtnbac">
+          <input type="image" src="media/factory.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought4">0</h1>
+        <h1 id="price4">1</h1>
+        <h1 id="product4">0</h1>
+      </div>
+    </div>
+    <!--Start of 5-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy5" class=" onebtn onebtnbac">
+          <input type="image" src="media/printing.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought5">0</h1>
+        <h1 id="price5">1</h1>
+        <h1 id="product5">0</h1>
+      </div>
+    </div>
+    <!--Start of 6-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy6" class=" onebtn onebtnbac">
+          <input type="image" src="media/ritual.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought6">0</h1>
+        <h1 id="price6">1</h1>
+        <h1 id="product6">0</h1>
+      </div>
+    </div>
+    <!--Start of 7-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy7" class=" onebtn onebtnbac">
+          <input type="image" src="media/spells.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought7">0</h1>
+        <h1 id="price7">1</h1>
+        <h1 id="product7">0</h1>
+      </div>
+    </div>
+    <!--Start of 8-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy8" class=" onebtn onebtnbac">
+          <input type="image" src="media/chemistry.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought8">0</h1>
+        <h1 id="price8">1</h1>
+        <h1 id="product8">0</h1>
+      </div>
+    </div>
+    <!--Start of 9-->
+    <div class="row">
+      <!--blet-->
+      <div class="col-3">
+        <br>
+      </div>
+      <div class="col-3">
+        <img src="media/belt.gif" class="beltfix">
+      </div>
+      <!--button to buy with image-->
+      <div class="col-3">
+        <button id="buy9" class=" onebtn onebtnbac">
+          <input type="image" src="media/nuclear_fusion.png" class="buybtn">
+        </button>      
+      </div>
+      <!--Info-->
+      <div class="col-3">
+        <h1 id="bought9">0</h1>
+        <h1 id="price9">1</h1>
+        <h1 id="product9">0</h1>
+      </div>
+    </div>
+    <!--Start of bottom-->
+    <div class="row">
+      <!--Bowl-->
+      <div class="col-3">
+        <img id="cu" src="media/empty.png" alt="no" class="bowl">
+      </div>
+      <!--weights-->
+
+      <div class="col-6">
+        <table id="weighttb">
+          <tr class="weig">
+            <th class="weig" colspan="2"><span id="rice1"></span> rice grains</th>
+          </tr>
+          <tr class="weig">
+            <td class="weig"><span id="grams"></span> grams</td>
+            <td class="weig"><span id="oz"></span> ounces</td>
+          </tr>
+          <tr class="weig">
+            <td class="weig"><span id="kilograms"></span> kilograms</td>
+            <td class="weig"><span id="lb"></span> pounds</td>
+          </tr>
+          <tr class="weig">
+            <td class="weig"><span id="mtn"></span> metric tons</td>
+            <td class="weig"><span id="itn"></span> imperial tons</td>
+          </tr>
+          <tr class="weig">
+            <td colspan="2"><span id="goal"></span>% of the way to the goal</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!--Extra space to account for footer-->
+    <div class="row">
+      <div class="col-12"><br></div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <footer class= "position-fixed bottom-0 col-lg-12 left-0">
+      <div class="row bg-secondary">
+        <div class="col-lg-12 col-12 ftfix">
+            <p class="ftfix"><i>Made by Ethan Truong, Daniel Santiago, William Robbins, Alexis Pelaez, and Angel Gonzalez</i><span class="opacity-0">_______________________</span> Youtube channel:<a href="http://www.youtube.com/@AAA_gamess" target="_blank"><i class="bi bi-youtube">Youtube.com/@AAA_gamess</a><span class="opacity-0">_______________________</span>Main Support Email: truong.skool009@gmail.com</p>
+        </div>
+    </div>
+  </div>
+    </footer>
+    <!--End of Footer--> 
     <script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
