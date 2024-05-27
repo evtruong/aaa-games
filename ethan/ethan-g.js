@@ -9,13 +9,13 @@ let snakeBody = []
 let velocityX = 0, velocityY = 0;
 let setIntervalId;
 let score = 0;
-let highScore = localStorage.getItem('highScore') || 0; // Load high score from localStorage
+let highScore = localStorage.getItem('high-score') || 0; // Load high score from localStorage
 
 const storeScore = () => {
   // Update high score if current score is higher
     if (score > highScore) {
         highScore = score;
-        localStorage.setItem('highScore', highScore); // Store high score in localStorage
+        localStorage.setItem('high-score', highScore); // Store high score in localStorage
         highScoreElement.innerText = `High Score: ${highScore}`;
     }
 }
