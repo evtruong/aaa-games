@@ -5,83 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home: AAA Games</title>
     <!--BOOTSTRAP CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!--Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jersey+10&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
-        
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12"><!--Navbar-->
-              <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" data-bs-theme="dark">
+    <div class=" container-fluid">
+        <div class="row bg-secondary"> <!--Navbar-->
+            <nav class="navbar navbar-expand-lg mb-3" data-bs-theme="dark">
                 <div class="container-fluid">
-                <a class="navbar-brand jacquard-12-regular" href="index.html">Awesome Algebraic Activities</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand" href="index.html">AAA Games</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link jacquard-12-regular active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link jacquard-12-regular" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link jacquard-12-regular" href="our-games.html">
-                        Our Games
-                        </a>
-                    </li>
-                    </ul>
-                </div>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav nav-underline">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Games
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="game1.html">The Rice Production Line</a></li>
+                            <li><a class="dropdown-item" href="daniel.html">Daniel Game Name</a></li>
+                            <li><a class="dropdown-item" href="dicebMain.html">The Stressful Dice Battle Game</a></li>
+                            <li><a class="dropdown-item" href="et-page.html">Ethan's Game Name</a></li>
+                            <li><a class="dropdown-item" href="#">Angel's Game Name</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
-          </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <img src="#" alt="banner">
-            </div>
         </div>
-
+    </div>
+    <div class="container" id="bodythingy">
         <div class="row">
-            <div class="col-md-6">
-                <h2 class="jacquard-12-regular">Welcome to Awesome Algebriac Activities!</h2>
+            <div class="col-md-5">
+                <h1 class="jacquard-12-regular">Welcome to Awesome Algebriac Activities!</h1>
                 <p class="jersey-10-regular">Also known as AAA games, and we are a proud host of various simple games made by aspiring computer science students!</p>
             </div>
         </div>
-
+        <div class=" container">
+            <div class="row">
+                <div class="col-5 divbg">
+                    <h1>The rice production line</h1>
+                    <hr>
+                    <details> <summary>Click to see details</summary><hr> <p> Have you ever wanted to start a rice empire? If so you're in luck! You start off plucking your rice grains then you advance to planting then farming your rice grains. After that you get intrested in wizardry and do rituals to make more rice then cast spells. Then you act as a scientist and make rice with chemistry then nuclear fusion </p> </details>
+                    <hr>
+                    <a href="game1.html"><img src="media/game1.png" alt="bob" class="img1"></a>
+                </div>
+                <div class="col-2">
+                    <br>
+                </div>
+                <div class="col-5 divbg">
+                    <h1>The Stressful Dice Battle Game</h1>
+                    <hr>
+                    <!--Put description-->
+                    <details> <summary>Click to Show Details</summary><hr> <p>Do you want to play a game that is based on dice rolls that are completely random. You'll go up against bots of varying levels of difficulty, and you must lead your country to victory. Take role as the military leader of the country and survive as long as you can.</p> </details>                    <hr>
+                    <a href="dicebMain.html"><img src="media/dice.gif" alt="bob" class="img1"></a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-5 divbg">
+                    <h1>Ourobous</h1>
+                    <hr>
+                    <!--Put description-->
+                    <details> <summary>Click to Show Details</summary><hr> <p>Do you want to play an exhilarating game of precise movment and stress. Which is about a sanke who is feeling trapped inside its limited form, it wants to grow to be an ourobous, but alas the cycle of suffering in this indefferent universe forxes it in an infinite loop of eating.</p> </details>
+                    <hr>
+                    <a href="#"><img src="media/placeholder.png" alt="bob" class="img1"></a>
+                </div>
+                <div class="col-2">
+                    <br>
+                </div>
+                <div class="col-5 divbg">
+                    <h1>Insert name of game</h1>
+                    <hr>
+                    <!--Put description-->
+                    <details> <summary>Click to Show Details</summary> <p>Insert description</p> </details>
+                    <hr>
+                    <a href="#"><img src="media/placeholder.png" alt="bob" class="img1"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <br>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     <!--Start of Footer-->
-    <footer>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <h2 class="jacquard-12-regular">Where we are:</h2>
+    <div class="container-fluid">
+        <footer class= "position-fixed bottom-0 col-lg-12 left-0">
+          <div class="row bg-secondary">
+            <div class="col-lg-12 col-12 ftfix">
+                <p class="ftfix"><i>Made by Ethan Truong, Daniel Santiago, William Robbins, Alexis Pelaez, and Angel Gonzalez</i><span class="opacity-0">_______________________</span> Youtube channel:<a href="http://www.youtube.com/@AAA_gamess" target="_blank"><i class="bi bi-youtube">Youtube.com/@AAA_gamess</a><span class="opacity-0">_______________________</span>Main Support Email: truong.skool009@gmail.com</p>
             </div>
         </div>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <a href="http://www.youtube.com/@AAA_gamess" target="_blank"><i class="bi bi-youtube"></i></a>
-            </div>
-        </div>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <h3 class="jersey-10-regular"><u>Support email: truong.skool009@gmail.com</u></h3>
-            </div>
-        </div>
-        <div class="row bg-secondary">
-            <div class="col-lg-12 col-md-12">
-                <p class="jersey-10-regular"><i>AAA Games made by Ethan Truong, Daniel Santiago, William Robbins, Alexis Pelaez, and Angel Gonzalez. All rights reserved.</i></p>
-            </div>
-        </div>
-    </footer>
+      </footer>
+    </div>
     <!--End of Footer-->
 
-    </div>
+
     <!--BOOTSTRAP SCRIPTS-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
