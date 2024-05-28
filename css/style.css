@@ -1,10 +1,13 @@
 /*COLOR PALETTE:
-ADD HEX CODES HERE
+#Ac3b61
+#123C69
+#EEE2DC
+#BAB2B5
+#edc7b7
 */
 .jacquard-12-regular {
     font-family: "Jacquard 12", system-ui;
     font-weight: 400;
-    font-size: 25px;
     font-style: normal;
   }
   .jersey-10-regular {
@@ -32,7 +35,12 @@ ADD HEX CODES HERE
     margin-right: 10px;
   }
   h1{
-    color:#123C69
+    color:#123C69;
+    font-size: 50px;
+  }
+  h2{
+    color:#Ac3b61;
+    font-size: 25px;
   }
   a {
     color:#123C69
