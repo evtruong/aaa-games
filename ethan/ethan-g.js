@@ -11,15 +11,6 @@ let setIntervalId;
 let score = 0;
 let highScore = localStorage.getItem('high-score') || 0; // Load high score from localStorage
 
-const storeScore = () => {
-  // Update high score if current score is higher
-    if (score > highScore) {
-        highScore = score;
-        localStorage.setItem('high-score', highScore); // Store high score in localStorage
-        highScoreElement.innerText = `High Score: ${highScore}`;
-    }
-}
-
 const changeFoodPosition = () => {
     // Passing a random 0 - 30 value as food position
     foodX = Math.floor(Math.random() * 30) + 1;
@@ -60,6 +51,12 @@ const initGame = () => {
         changeFoodPosition();
         snakeBody.push([foodX, foodY]); // Pushing food position to snake body array
         score++; // increment score by 1
+        // Update high score if current score is higher
+            if (score > highScore) {
+                highScore = score;
+                localStorage.setItem('high-score', highScore); // Store high score in localStorage
+                highScoreElement.innerText = `High Score: ${highScore}`;
+            }
         scoreElement.innerText = `Score: ${score}`;
     }
   
