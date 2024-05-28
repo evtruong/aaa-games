@@ -18,5 +18,34 @@ ADD HEX CODES HERE
     font-size: small;
     bottom: 0px;
   }
-  
-  
+  .ftfix{
+    border-bottom: 0px;
+    border-top: 0px;
+    margin-top: 0px;
+    margin-bottom:5px;
+    
+  }
+  .img1{
+    width: 440px;
+    height: 500px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  h1{
+    color:#123C69
+  }
+  body{
+    background-color: #EEE2DC;
+  }
+  #bodythingy{
+    background-color: #BAB2B5;
+  }
+  p{
+    color: #Ac3b61;
+  }
+  .divbg{
+    background-color: #edc7b7;
+  }
+  summary{
+    color: #Ac3b61;
+  }
