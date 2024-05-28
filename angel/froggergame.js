@@ -12,4 +12,22 @@ function initialLayout(){
             container.appendChild(elem)
         }
     }
+
+    const divs = container.children
+
+    // Top row is grass
+    for (let i = 0 ; i < columns ; i++) {
+        divs[i].classList.add('grass')
+    }    
+
+    // Bottom row is grass
+    for (let i = 0 ; i < columns ; i++) {
+        divs[(rows - 1) * columns + i].classList.add('grass')
+    }    
+
+    // Draw frog
+    divs[frogLocation].classList.add('frog')
 }
+
+initialLayout()
+

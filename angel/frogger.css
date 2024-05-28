@@ -73,5 +73,28 @@
     background-color: green;
     border-radius: 50%;
     position: relative;
-    overflow: hidden; /* To hide overflowed content */
+    overflow: hidden; /* hides overflowed content */
+}
+
+/* frogeyes */
+.frog::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+
+.frog::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 60%;
 }
