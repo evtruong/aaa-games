@@ -462,7 +462,7 @@ function change(){
         b=0
     }
 }
-function imgchange(){
+function imgchnge(){
     if(rice/52040000000000000>=0 && rice/52040000000000000<0.25){
         let empty=document.querySelector("#cu")
         empty.setAttribute("src", "will/media/empty.png")
