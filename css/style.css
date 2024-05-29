@@ -6,63 +6,88 @@
 #edc7b7
 */
 .jacquard-12-regular {
-    font-family: "Jacquard 12", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
-  .jersey-10-regular {
-    font-family: "Jersey 10", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  /*THE NEW CSS CODE FOR FOOTER BELOW*/
-  footer{
-    position: fixed;
-    font-size: small;
-    bottom: 0px;
-  }
-  .ftfix{
-    border-bottom: 0px;
-    border-top: 0px;
-    margin-top: 0px;
-    margin-bottom:5px;
-    
-  }
-  .img1{
-    width: 440px;
-    height: 500px;
-  }
-  h1{
-    color:#123C69;
-    font-size: 50px;
-  }
-  h2{
-    color:#Ac3b61;
-    font-size: 25px;
-  }
-  a {
-    color:#123C69
-  }
-  body{
-    background-color: #EEE2DC;
-  }
-  #bodythingy{
-    background-color: #BAB2B5;
-  }
-  p{
-    color: #Ac3b61;
-  }
-  .divbg{
-    background-color: #edc7b7;
-    border: 5px dashed #EEE2DC;
-  }
-  summary h2{
-    color: #Ac3b61;
-  }
-  .fp {
-    color: black;
-  }
-  .himg{
-    margin-left: auto;
-    margin-right: auto;
-  }
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/*THE NEW CSS CODE FOR FOOTER BELOW*/
+footer{
+  position: fixed;
+  font-size: small;
+  bottom: 0px;
+}
+.ftfix{
+  border-bottom: 0px;
+  border-top: 0px;
+  margin-top: 0px;
+  margin-bottom:5px;
+  font-size: small;
+}
+.img1{
+  width: 440px;
+  height: 500px;
+}
+h1{
+  color:#123C69;
+  font-size: 50px;
+}
+h2{
+  color:#Ac3b61;
+}
+a {
+  color:#123C69
+}
+body{
+  background-color: #EEE2DC;
+}
+#bodythingy{
+  background-color: #BAB2B5;
+}
+p, li{
+  color: #Ac3b61;
+  font-size: large;
+}
+.divbg{
+  background-color: #edc7b7;
+  border: 5px dashed #EEE2DC;
+  border-radius: 10px;
+}
+summary h2{
+  color: #Ac3b61;
+}
+.fp {
+  color: black;
+}
+.himg{
+  margin-left: auto;
+  margin-right: auto;
+}
+.adivc{
+  margin-right:auto;
+  margin-left: auto;
+}
+.adivsp{
+  margin-right: 9.7px;
+    width: 54.7vh;
+}
+.adivsp1{
+  margin-right:0px;
+}
+.adivsp2{
+  width: 70vh;
+  margin-right: 5vh;
+  margin-left: 6vh;
+  margin-top: 4vh;
+}
+.arow1{
+  margin-right:auto;
+  margin-left: auto;
+}
+.ali{
+  font-size: x-large;
+}
