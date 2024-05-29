@@ -240,42 +240,42 @@ var dice = {
 
     //Determines the image presented based on the roll (FOR THE USER)//
     if (result===1){
-      var dierolled = "alexis/media/dice-1.jpg";
+      var dierolled = "diemedia/dice-1.jpg";
     }
     else if (result===2){
-      var dierolled = "alexis/media/dice-2.jpg";
+      var dierolled = "diemedia/dice-2.jpg";
     }
     else if (result===3){
-      var dierolled = "alexis/media/dice-3.jpg";
+      var dierolled = "diemedia/dice-3.jpg";
     }
     else if (result===4){
-      var dierolled = "alexis/media/dice-4.jpg";
+      var dierolled = "diemedia/dice-4.jpg";
     }
     else if (result===5){
-      var dierolled = "alexis/media/dice-5.jpg";
+      var dierolled = "diemedia/dice-5.jpg";
     }
     else if (result===6){
-      var dierolled = "alexis/media/dice-6.jpg";
+      var dierolled = "diemedia/dice-6.jpg";
     }
 
     //Determines the image presented based on the roll (FOR THE ENEMY)//
       if (enemyresult===1){
-        var enemydierolled = "alexis/media/dice-1.jpg";
+        var enemydierolled = "diemedia/dice-1.jpg";
       }
       else if (enemyresult===2){
-        var enemydierolled = "alexis/media/dice-2.jpg";
+        var enemydierolled = "diemedia/dice-2.jpg";
       }
       else if (enemyresult===3){
-        var enemydierolled = "alexis/media/dice-3.jpg";
+        var enemydierolled = "diemedia/dice-3.jpg";
       }
       else if (enemyresult===4){
-        var enemydierolled = "alexis/media/dice-4.jpg";
+        var enemydierolled = "diemedia/dice-4.jpg";
       }
       else if (enemyresult===5){
-        var enemydierolled = "alexis/media/dice-5.jpg";
+        var enemydierolled = "diemedia/dice-5.jpg";
       }
       else if (enemyresult===6){
-        var enemydierolled = "alexis/media/dice-6.jpg";
+        var enemydierolled = "diemedia/dice-6.jpg";
       }
     //The if statement that allows the user to continue fighting
     function determineEnd(result){
@@ -425,11 +425,12 @@ var dice = {
     enemystatistics.smallbadluckU = 500;
     enemystatistics.smallbadluckU = 1;
     document.getElementById("roll").removeAttribute("hidden");
+    document.getElementById("roll").removeAttribute("disabled")
     document.getElementById("user").innerHTML = "";
     document.getElementById("enemy").innerHTML = "";
     document.getElementById("resultofwinner").innerHTML = "";
-    document.querySelector("#userimg").setAttribute("src","alexis/media/questionmark.jpg");
-    document.querySelector("#enemyimg").setAttribute("src","alexis/media/questionmark.jpg");
+    document.querySelector("#userimg").setAttribute("src","diemedia/questionmark.jpg");
+    document.querySelector("#enemyimg").setAttribute("src","diemedia/questionmark.jpg");
     var completedOnce = "true"; //Change
     customPrompt(completedOnce);
   }
