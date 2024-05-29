@@ -51,12 +51,6 @@
     display:inline;
     word-wrap: break-word;
 }
-.enemylay {
-    float:right;
-}
-p.eneSide{
-    text-align:right;
-}
 #allincon{
     position:relative;
     z-index:1;
@@ -90,10 +84,16 @@ p.eneSide{
 .popmid{
     text-align:center;
 }
+.popmid{
+    text-align:center;
+}
 #op1,#op2,#op3{
     margin:auto;
     display:block;
 }
 #resultofwinner{
     top:50%;
+}
+#enestats {
+    text-align: right;
 }
