@@ -1,6 +1,6 @@
 body {
   min-height: 100vh;
-  background: #E3F2FD;
+  background: #edc7b7;
 }
 .wrapper {
   width: 65vmin;
@@ -25,7 +25,8 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  background: #212837;
+  background-image: url(media/stars.png);
+  background-repeat: repeat;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
 .play-board .food {
