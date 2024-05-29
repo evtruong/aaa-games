@@ -59,13 +59,13 @@ var statistics = {
   },
   unit:function(difficulty){
     if(difficulty == "Easy" || difficulty == "easy" || difficulty == "EASY"){
-      var life = 1000;
+      var life = 1250;
     }
     else if(difficulty == "Medium" || difficulty == "medium" || difficulty == "MEDIUM"){
-      var life = 500;
+      var life = 750;
     }
     else if(difficulty == "Hard" || difficulty == "hard" || difficulty == "HARD"){
-      var life = 350;
+      var life = 500;
     }
     this.unitsleft = life;
     this.manpower = life;
