@@ -383,7 +383,7 @@ var dice = {
    }
    //Prompt that the user is greeted with to know how many units they'd like to use
    //Attempt to make it so the user can only input integer values//
-    document.addEventListener("onload",customPrompt());
+    document.addEventListener("load",customPrompt());
     function customPrompt(completedOnce){
     alert("There's Three Difficulties: Easy, Medium, and Hard");
     let difficulty = prompt("What difficulty would you like to play on?");
