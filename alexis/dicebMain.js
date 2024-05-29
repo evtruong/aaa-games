@@ -57,7 +57,16 @@ var statistics = {
     this.population = 4*this.manpower-(this.manpower-this.unitsleft);
     document.getElementById("population").innerHTML = this.population;
   },
-  unit:function(life){
+  unit:function(difficulty){
+    if(difficulty == "Easy" || difficulty == "easy" || difficulty == "EASY"){
+      var life = 1000;
+    }
+    else if(difficulty == "Medium" || difficulty == "medium" || difficulty == "MEDIUM"){
+      var life = 500;
+    }
+    else if(difficulty == "Hard" || difficulty == "hard" || difficulty == "HARD"){
+      var life = 350;
+    }
     this.unitsleft = life;
     this.manpower = life;
     this.population = life * 4;
@@ -176,6 +185,9 @@ var statistics = {
   }
 }
 //EARLY DEVELOPMENT ABOVE//
+  var begingame = document.getElementById("begingame");
+  var maingame = document.getElementById("allincon");
+  var menu = document.getElementById("mainmenu");
   //Used to set the level of the Enemy
   var enemylevel = [1,2,3,4];
   function enemiesCreate(){
@@ -228,42 +240,42 @@ var dice = {
 
     //Determines the image presented based on the roll (FOR THE USER)//
     if (result===1){
-      var dierolled = "alexis/media/dice-1.jpg";
+      var dierolled = "diemedia/dice-1.jpg";
     }
     else if (result===2){
-      var dierolled = "alexis/media/dice-2.jpg";
+      var dierolled = "diemedia/dice-2.jpg";
     }
     else if (result===3){
-      var dierolled = "alexis/media/dice-3.jpg";
+      var dierolled = "diemedia/dice-3.jpg";
     }
     else if (result===4){
-      var dierolled = "alexis/media/dice-4.jpg";
+      var dierolled = "diemedia/dice-4.jpg";
     }
     else if (result===5){
-      var dierolled = "alexis/media/dice-5.jpg";
+      var dierolled = "diemedia/dice-5.jpg";
     }
     else if (result===6){
-      var dierolled = "alexis/media/dice-6.jpg";
+      var dierolled = "diemedia/dice-6.jpg";
     }
 
     //Determines the image presented based on the roll (FOR THE ENEMY)//
       if (enemyresult===1){
-        var enemydierolled = "alexis/media/dice-1.jpg";
+        var enemydierolled = "diemedia/dice-1.jpg";
       }
       else if (enemyresult===2){
-        var enemydierolled = "alexis/media/dice-2.jpg";
+        var enemydierolled = "diemedia/dice-2.jpg";
       }
       else if (enemyresult===3){
-        var enemydierolled = "alexis/media/dice-3.jpg";
+        var enemydierolled = "diemedia/dice-3.jpg";
       }
       else if (enemyresult===4){
-        var enemydierolled = "alexis/media/dice-4.jpg";
+        var enemydierolled = "diemedia/dice-4.jpg";
       }
       else if (enemyresult===5){
-        var enemydierolled = "alexis/media/dice-5.jpg";
+        var enemydierolled = "diemedia/dice-5.jpg";
       }
       else if (enemyresult===6){
-        var enemydierolled = "alexis/media/dice-6.jpg";
+        var enemydierolled = "diemedia/dice-6.jpg";
       }
     //The if statement that allows the user to continue fighting
     function determineEnd(result){
@@ -371,20 +383,21 @@ var dice = {
    }
    //Prompt that the user is greeted with to know how many units they'd like to use
    //Attempt to make it so the user can only input integer values//
-   document.addEventListener("onload",customPrompt());
-   function customPrompt(completedOnce){ 
-    let totalUnits = parseInt(prompt("How many units would you like to have?")); //Change - Add a prompt to ask for difficulty which changes the amount of units you get
-    statistics.unit(totalUnits);
-    if (completedOnce === "true"){
-      enemiesCreate()
-    }
-    else{
-      let username1 = prompt("What will be your leader's name?");
-      let username2 = username1;
-      document.getElementById("usersnameone").innerHTML= username1;
-      document.getElementById("usersnametwo").innerHTML = username2;
-      enemiesCreate();
-    }
+    maingame.addEventListener("onload",customPrompt());
+    function customPrompt(completedOnce){
+    alert("There's Three Difficulties: Easy, Medium, and Hard");
+    let difficulty = prompt("What difficulty would you like to play on?");
+    statistics.unit(difficulty);
+      if (completedOnce === "true"){
+        enemiesCreate()
+      }
+      else{
+        let username1 = prompt("What will be your leader's name?");
+        let username2 = username1;
+        document.getElementById("usersnameone").innerHTML= username1;
+        document.getElementById("usersnametwo").innerHTML = username2;
+        enemiesCreate();
+      }
    }
   //Allows for the restarting of the game
   var restart = document.getElementById("restart");
@@ -415,8 +428,8 @@ var dice = {
     document.getElementById("user").innerHTML = "";
     document.getElementById("enemy").innerHTML = "";
     document.getElementById("resultofwinner").innerHTML = "";
-    document.querySelector("#userimg").setAttribute("src","alexis/media/questionmark.jpg");
-    document.querySelector("#enemyimg").setAttribute("src","alexis/media/questionmark.jpg");
+    document.querySelector("#userimg").setAttribute("src","diemedia/questionmark.jpg");
+    document.querySelector("#enemyimg").setAttribute("src","diemedia/questionmark.jpg");
     var completedOnce = "true"; //Change
     customPrompt(completedOnce);
   }
@@ -721,8 +734,8 @@ var dice = {
   function gameOver(){
     alert("Your time as a Military Leader Has Come to an End!");
     document.getElementById("roll").setAttribute("hidden","hidden");
-    
-     //Change
+    document.getElementById("roll").setAttribute("disabled","")
+    clearInterval(setInterval()); //Change
   }
   var auto = document.getElementById("auto");
   var endauto = document.getElementById("endauto");
