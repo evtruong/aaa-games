@@ -10,7 +10,7 @@ border: 1px solid;
 .bowl{
 height: 950px;
 width: 450px;
-padding-left: 5000000px;
+margin-left: 10px;
 position: relative;
 left: -120px;
 }
