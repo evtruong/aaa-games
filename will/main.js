@@ -490,9 +490,23 @@ function evening(){
     rice=(Math.round(1000*rice))/1000
     document.getElementById("amount").textContent=rice;
 }
-//start of help
-function help(){
-    
+function imgchange(){
+    if(rice/52040000000000000>=0 && rice/52040000000000000<0.25){
+        let empty=document.querySelector("#cu")
+        empty.setAttribute("src", "media/empty.png")
+    }
+    else if(rice/52040000000000000>=0.25 && rice/52040000000000000<0.5){
+        let quarter=document.querySelector("#cu")
+        quarter.setAttribute("src", "media/quarter.png")
+    }
+    else if(rice/52040000000000000>=0.5 && rice/52040000000000000<0.75){
+        let half=document.querySelector("#cu")
+        half.setAttribute("src", "media/half.png")
+    }
+    else if(rice/52040000000000000>=1){
+        let full=document.querySelector("#cu")
+        full.setAttribute("src", "media/full.png")
+    }
 }
 // start 1 plucking
 document.getElementById("buy1").addEventListener("click", function(){plucking.bought()})
