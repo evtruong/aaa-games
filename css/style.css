@@ -1,7 +1,7 @@
 /*COLOR PALETTE:
 #Ac3b61
 #123C69
-#EEE2DC
+#FFEEEE
 #BAB2B5
 #edc7b7
 */
@@ -43,10 +43,11 @@ a {
   color:#123C69
 }
 body{
-  background-color: #EEE2DC;
+  background-color: #FFEEEE;
 }
 #bodythingy{
   background-color: #BAB2B5;
+  width: fit-content;
 }
 p, li{
   color: #Ac3b61;
@@ -54,7 +55,7 @@ p, li{
 }
 .divbg{
   background-color: #edc7b7;
-  border: 5px dashed #EEE2DC;
+  border: 5px dashed #FFEEEE;
   border-radius: 10px;
 }
 summary h2{
@@ -67,27 +68,21 @@ summary h2{
   margin-left: auto;
   margin-right: auto;
 }
-.adivc{
-  margin-right:auto;
-  margin-left: auto;
-}
 .adivsp{
-  margin-right: 9.7px;
-    width: 54.7vh;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5px;
+  width: 55vh;
 }
 .adivsp1{
   margin-right:0px;
 }
 .adivsp2{
-  width: 70vh;
-  margin-right: 5vh;
-  margin-left: 6vh;
-  margin-top: 4vh;
-}
-.arow1{
+  width: 70dvh;
   margin-right:auto;
   margin-left: auto;
+  margin-top: 4.5dvi;
 }
 .ali{
-  font-size: x-large;
+  font-size: 25px;
 }
