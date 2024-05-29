@@ -10,6 +10,7 @@ border: 1px solid;
 .bowl{
 height: 950px;
 width: 450px;
+margin: 0px;
 }
 .may{
 position: absolute;
