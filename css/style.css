@@ -37,9 +37,6 @@ h1{
   font-size: 55px;
   text-align: center;
 }
-.title {
-  color:#123C69;
-}
 h2{
   font-size: 45px;
   color: #Ac3b61;
@@ -54,9 +51,6 @@ body{
 #bodythingy{
   background-color: #BAB2B5;
   width: fit-content;
-}
-.alexisbodythingy{
-  width:65%;
 }
 p, li{
   color: #Ac3b61;
@@ -99,4 +93,8 @@ h3{
 }
 .ali{
   font-size: 20px;
+}
+.card1{
+  background-color: transparent;
+  border: transparent;
 }
