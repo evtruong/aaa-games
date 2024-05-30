@@ -12,7 +12,7 @@ var buttonword="o"
 var total=0
 var b=0
 var increase=0
-
+var imgElement= document.querySelector("#cu");
 var plucking= {
     number:1,
     price:15,
@@ -437,7 +437,7 @@ function increase1(){
 }
 
 setInterval(function(){
-    plucking.made(),planting.made(),farming.made(),factory.made(),printing.made(),ritual.made(),spells.made(),chemistry.made(),nuclear_fusion.made(), all(), weight(), imgchange(), evening()}, 100)
+    plucking.made(),planting.made(),farming.made(),factory.made(),printing.made(),ritual.made(),spells.made(),chemistry.made(),nuclear_fusion.made(), imgchange(), evening()}, 100)
 setInterval( function(){
     weight.interva(), imgchange()
 }, 100)
@@ -462,22 +462,20 @@ function change(){
         b=0
     }
 }
-function imgchnge(){
+function imgchange(){
     if(rice/52040000000000000>=0 && rice/52040000000000000<0.25){
-        let empty=document.querySelector("#cu")
-        empty.setAttribute("src", "will/media/empty.png")
+      if(imgElement){
+                imgElement.setAttribute("src", "will/media/empty.png")
+      }
     }
     else if(rice/52040000000000000>=0.25 && rice/52040000000000000<0.5){
-        let quarter=document.querySelector("#cu")
-        quarter.setAttribute("src", "will/media/quarter.png")
+        imgElement.setAttribute("src", "will/media/quarter.png")
     }
     else if(rice/52040000000000000>=0.5 && rice/52040000000000000<0.75){
-        let half=document.querySelector("#cu")
-        half.setAttribute("src", "will/media/half.png")
+        imgElement.setAttribute("src", "will/media/half.png")
     }
     else if(rice/52040000000000000>=1){
-        let full=document.querySelector("#cu")
-        full.setAttribute("src", "will/media/full.png")
+        imgElement.setAttribute("src", "will/media/full.png")
     }
 }
 document.getElementById("amount").textContent= rice;
@@ -489,24 +487,6 @@ function hi(){
 function evening(){
     rice=(Math.round(1000*rice))/1000
     document.getElementById("amount").textContent=rice;
-}
-function imgchange(){
-    if(rice/52040000000000000>=0 && rice/52040000000000000<0.25){
-        let empty=document.querySelector("#cu")
-        empty.setAttribute("src", "media/empty.png")
-    }
-    else if(rice/52040000000000000>=0.25 && rice/52040000000000000<0.5){
-        let quarter=document.querySelector("#cu")
-        quarter.setAttribute("src", "media/quarter.png")
-    }
-    else if(rice/52040000000000000>=0.5 && rice/52040000000000000<0.75){
-        let half=document.querySelector("#cu")
-        half.setAttribute("src", "media/half.png")
-    }
-    else if(rice/52040000000000000>=1){
-        let full=document.querySelector("#cu")
-        full.setAttribute("src", "media/full.png")
-    }
 }
 // start 1 plucking
 document.getElementById("buy1").addEventListener("click", function(){plucking.bought()})
