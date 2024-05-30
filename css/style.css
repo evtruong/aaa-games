@@ -34,16 +34,19 @@ footer{
 }
 h1{
   color:#123C69;
-  font-size: 50px;
+  font-size: 55px;
+  text-align: center;
 }
 h2{
-  color:#Ac3b61;
+  font-size: 45px;
+  color: #Ac3b61;
+
 }
 a {
   color:#123C69
 }
 body{
-  background-color: #FFEEEE;
+  background-color: #ffdcdc;
 }
 #bodythingy{
   background-color: #BAB2B5;
@@ -57,6 +60,7 @@ p, li{
   background-color: #edc7b7;
   border: 5px dashed #FFEEEE;
   border-radius: 10px;
+  margin-bottom:5px;
 }
 summary h2{
   color: #Ac3b61;
@@ -83,6 +87,10 @@ summary h2{
   margin-left: auto;
   margin-top: 4.5dvi;
 }
+h3{
+  font-size: 30px;
+  color: #Ac3b61;
+}
 .ali{
-  font-size: 25px;
+  font-size: 20px;
 }
