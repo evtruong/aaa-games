@@ -52,13 +52,6 @@ body{
   background-color: #BAB2B5;
   width: fit-content;
 }
-/*Only for Alexis's game*/
-#alexisbodythingy{
-  background-color: #BAB2B5;
-  width: fit-content;
-  width:65%;
-}
-/*Only for Alexis's game*/
 p, li{
   color: #Ac3b61;
   font-size: large;
@@ -104,4 +97,12 @@ h3{
 .card1{
   background-color: transparent;
   border: transparent;
+}
+.list-group-item{
+  background-color: #BAB2B5;
+  border: black;
+  font-size: 40px;
+}
+.ah{
+  color:#123C69;
 }
