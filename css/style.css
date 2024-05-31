@@ -52,6 +52,13 @@ body{
   background-color: #BAB2B5;
   width: fit-content;
 }
+/*Only for Alexis's game*/
+#alexisbodythingy{
+  background-color: #BAB2B5;
+  width: fit-content;
+  width:65%;
+}
+/*Only for Alexis's game*/
 p, li{
   color: #Ac3b61;
   font-size: large;
