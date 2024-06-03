@@ -57,7 +57,7 @@
 }
 #pop-up1,#pop-up2,#pop-up3{
     
-    border: 3px solid black;
+    border: 3px solid #Ac3b61;
     background-color: white;
 }
 #pop-up1{
@@ -98,7 +98,9 @@
 .diceimag{
     border: 3px solid #Ac3b61;
 }
-
+.diceimag{
+    border: 3px solid #Ac3b61;
+}
 div h1,div h3{
     color:#123C69;
 }
