@@ -52,6 +52,11 @@ body{
   background-color: #BAB2B5;
   width: fit-content;
 }
+#alexisbodythingy{
+  background-color: #BAB2B5;
+  width:fit-content;
+  width:65%;
+}
 p, li{
   color: #Ac3b61;
   font-size: large;

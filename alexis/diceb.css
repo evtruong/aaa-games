@@ -2,7 +2,7 @@
     text-align:center;
 }
 #battlefield {
-    border:3px solid gold;
+    border: 3px solid #Ac3b61;
 }
 #side1{
     text-align: left;
@@ -11,21 +11,21 @@
     text-align: right;
 }
 #side1, #side2 {
-    border:3px solid gold;
+    border: 3px solid #Ac3b61;
 }
 #top {
-    border:3px solid gold;
+    border: 3px solid #Ac3b61;
     padding-top:20px;
     padding-bottom:20px;
 }
 #chamber {
-    border:3px solid gold;
+    border: 3px solid #Ac3b61;
     height:280px;
 }
 #ro1,#ro2,#ro3 {
     padding-top:20px;
 }
-#roll,#restart,#auto,#endauto {
+#roll,#restart, #auto, #endauto{
     display:block;
     margin:auto;
     margin-top:10px;
@@ -53,10 +53,10 @@
 }
 #allincon{
     position:relative;
-    z-index:1;
+    
 }
 #pop-up1,#pop-up2,#pop-up3{
-    z-index:2;
+    
     border: 3px solid black;
     background-color: white;
 }
@@ -65,24 +65,21 @@
     position:absolute;
     width:33.3%;
     left:0px;
-    top:18%;
+    top:33%;
 }
 #pop-up2{
     position:fixed;
     position:absolute;
     width:33.3%;
     left:33.35%;
-    top:18%;
+    top:33%;
 }
 #pop-up3{
     position:fixed;
     position:absolute;
     width:33.3%;
     right:0px;
-    top:18%;
-}
-.popmid{
-    text-align:center;
+    top:33%;
 }
 .popmid{
     text-align:center;
@@ -96,4 +93,12 @@
 }
 #enestats {
     text-align: right;
+}
+
+.diceimag{
+    border: 3px solid #Ac3b61;
+}
+
+div h1,div h3{
+    color:#123C69;
 }
