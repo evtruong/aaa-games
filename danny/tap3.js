@@ -5,8 +5,8 @@ let boardHeight = 960;
 let context;
 
 //bird
-let birdWidth = 48; 
-let birdHeight = 48;
+let birdWidth = 128; 
+let birdHeight = 128;
 let birdX = boardWidth/12;
 let birdY = boardHeight/3;
 let birdImg;
@@ -29,9 +29,9 @@ let topPipeImg;
 let bottomPipeImg;
 
 //physics
-let velocityX = -3; //pipes moving left speed
+let velocityX = -10; //pipes moving left speed
 let velocityY = 0; //bird jump speed
-let gravity = 0.6;
+let gravity = 0.4;
 
 let gameOver = false;
 let score = 0;
@@ -112,8 +112,8 @@ function placePipes() {
         return;
     }
 
-    let randomPipeY = pipeY - pipeHeight/6 - Math.random()*(pipeHeight/2);
-    let openingSpace = board.height/6;
+    let randomPipeY = pipeY - pipeHeight/4 - Math.random()*(pipeHeight/2);
+    let openingSpace = board.height/2;
 
     let topPipe = {
         img : topPipeImg,
