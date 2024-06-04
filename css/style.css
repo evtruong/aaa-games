@@ -66,6 +66,8 @@ p, li{
   border: 5px dashed #FFEEEE;
   border-radius: 10px;
   margin-bottom:5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 summary h2{
   color: #Ac3b61;
@@ -121,4 +123,8 @@ h3{
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
+}
+.form1{
+margin-right:auto;
+margin-left: auto;
 }
