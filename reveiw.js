@@ -108,24 +108,30 @@ function bob6(){
         if(i%2==0){
             bdiv.appendChild(rdiv)
             rdiv.appendChild(ndiv)
-            rdiv.appendChild(ndiv2)
             ndiv.appendChild(nh2)
             ndiv.appendChild(nhr)
             ndiv.appendChild(np)
             np.appendChild(nsp)
-            ndiv2.appendChild(nh22)
-            ndiv2.appendChild(nhr2)
-            ndiv2.appendChild(np2)
-            np2.appendChild(nsp2)
+
             nh2.innerHTML="Review "+a+": "+ah1[i]
-            nsp.innerHTML=ah3[i]
-            nh22.innerHTML="Review "+c+": "+ah1[b]
-            nsp2.innerHTML=ah3[b]
             rdiv.classList.add("row")
             ndiv.classList.add("col-6","divbg", "adivsp")
             nh2.classList.add("ah", "jersey-10-regular")
-            ndiv2.classList.add("col-6","divbg", "adivsp")
-            nh22.classList.add("ah", "jersey-10-regular")
+            
+            nsp.innerHTML=ah3[i]
+            if(ah1[b]!==undefined){
+                rdiv.appendChild(ndiv2)
+                ndiv2.appendChild(nh22)
+                ndiv2.appendChild(nhr2)
+                ndiv2.appendChild(np2)
+                np2.appendChild(nsp2)
+                nh22.innerHTML="Review "+c+": "+ah1[b]
+                nsp2.innerHTML=ah3[b]
+                ndiv2.classList.add("col-6","divbg", "adivsp")
+                nh22.classList.add("ah", "jersey-10-regular")
+
+            }
+           
         }
     }
     bob7()
