@@ -177,8 +177,6 @@ function bob7(){
             cell6.setAttribute("class", "form3 jacquard-12-regular")
         }
     }        
-
-
 }
 function bob9(){
     localStorage.clear();
