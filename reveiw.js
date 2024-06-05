@@ -52,20 +52,21 @@ function bob3(){
         let gam1=JSON.stringify(gam)
         localStorage.setItem("3", gam1)
         gam2=localStorage.getItem("3")
+        let gam3=JSON.parse(gam2)
     }
     else{
         let z= document.forms["bob1"]["bob8"].value
-        an[0]=z
+        gam[0]=z
         let gam1=JSON.stringify(gam)
         localStorage.setItem("3", gam1)
         let gam2=localStorage.getItem("3")
         let gam3=JSON.parse(gam2)
     }
+    //good/bad
     if(localStorage.getItem("4")!=null){
         let gb2=localStorage.getItem("4")
         gb=JSON.parse(gb2)
         let w= document.forms["bob1"]["good"].value
-        alert(w)
         gb.push(w)
         let gb1=JSON.stringify(gb)
         localStorage.setItem("4", gb1)
@@ -74,13 +75,13 @@ function bob3(){
     }
     else{
         let w= document.forms["bob1"]["good"].value
-        alert(w)
         an[0]=w
         let gb1=JSON.stringify(gb)
         localStorage.setItem("4", gb1)
         gb2=localStorage.getItem("4")
         let gb3=JSON.parse(gb2)
     }
+  
 }
 //The heading things
 function bob6(){
@@ -132,45 +133,53 @@ function bob6(){
 //The table
 function bob7(){
     let ah=localStorage.getItem("1")
-    let ah2=localStorage.getItem("4")
-    let ah4=localStorage.getItem("3")
-    let ah3=JSON.parse(ah2)
-    let ah1=JSON.parse(ah)
-    let ah5=JSON.parse(ah4)
-    for(var i=0; i<ah1.length; i++){
-        let tab=document.getElementById("bobstable");
-        let no=document.getElementById("rowsp");
-        let ntr1=document.createElement("tr");
-        let nth=document.createElement("th");
-        let td1=documnet.createElement("td");
-        alert("Bob");
-        let td2=documnet.createElement("td");
-        let td3=documnet.createElement("td");
-        let td4=documnet.createElement("td");
-        let a=i+8
-        no.setAttribute("rowspan", a)
-        tab.appendChild(ntr1)
-        ntr1.appendChild(nth)
-        ntr1.appendChild(td1)
-        ntr1.appendChild(td2)
-        ntr1.appendChild(td3)
-        ntr1.appendChild(td4)
-        if(ah3[i]==="bad"){
-            let d="Yes"
-            let f="No"
+    let ah2=localStorage.getItem("3")
+    let ah3=localStorage.getItem("4")
+    let ah4=JSON.parse(ah)
+    let ah5=JSON.parse(ah2)
+    let ah6=JSON.parse(ah3)
+    var table= document.getElementById("bobstabe")
+    for(var i=0; i<ah4.length; i++){
+        var f=""
+        var d=""
+        var e=i+9
+        var h=i+1
+        var j=i-1
+        var tr1=table.insertRow(h)
+        var cell1 = tr1.insertCell(0);
+        var cell2 = tr1.insertCell(1);
+        var cell3=tr1.insertCell(2)
+        var cell4=tr1.insertCell(3)
+        var cell5=tr1.insertCell(4)
+        cell1.innerHTML = "Review " +e;
+        cell2.innerHTML = ah4[i];
+        cell3.innerHTML=ah5[i]
+        cell5.setAttribute("colspan", "2")
+        cell1.setAttribute("class", "form2 jersey-10-regular")
+        cell2.setAttribute("class", "form3 jacquard-12-regular")
+        cell3.setAttribute("class", "form3 jacquard-12-regular")
+        cell4.setAttribute("class", "form3 jacquard-12-regular")
+        cell5.setAttribute("class", "form3 jacquard-12-regular")
+        if(ah6[i]=="good"){
+            f="Yes"
+            d="No"
         }
         else{
-            let d="No"
-            let f="Yes"
+            f="No"
+            d="Yes"
         }
-        nth.innerHTML="Review "+a
-        td1.innerHTML=ah1[i]
-        td2.innerHTML=ah5[i]
-        td3.innerHTML=f
-        td4.innerHTML=d
-        td4.setAttribute("colspan", "2")
-    }
+        cell4.innerHTML=f
+        cell5.innerHTML=d
+        if(i===0){
+            var cell6=tr1.insertCell(5)
+            cell6.innerHTML="No"
+            cell6.setAttribute("rowspan", i)
+            cell6.setAttribute("class", "form3 jacquard-12-regular")
+        }
+    }        
+
+
 }
-function bob8(){
+function bob9(){
     localStorage.clear();
 }

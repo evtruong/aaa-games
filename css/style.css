@@ -42,11 +42,6 @@ h2{
   color: #Ac3b61;
 
 }
-h3 {
-  font-size: 30px;
-  color: #123C69;
-  text-align: center;
-}
 a {
   color:#123C69
 }
@@ -129,7 +124,21 @@ h3{
   margin-left: auto;
   margin-right: auto;
 }
+td{
+  color:#Ac3b61;
+}
 .form1{
-margin-right:auto;
-margin-left: auto;
+font-size: 30px;
+}
+.form2{
+font-size: 30px;
+color:#123C69
+}
+.form3{
+font-size:25px;
+color:#Ac3b61; 
+}
+.form4{
+font-size:50px;
+color:#Ac3b61; 
 }
