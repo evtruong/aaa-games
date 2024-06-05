@@ -1,14 +1,3 @@
 #board {
   background-color: skyblue; 
 }
-footer{
-  position: fixed;
-  font-size: small;
-  bottom: 0px;
-}
-.ftfix{
-  border-bottom: 0px;
-  border-top: 0px;
-  margin-top: 0px;
-  margin-bottom:5px;  
-}
